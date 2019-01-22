@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "82838060789",
+    "firebase_url": "https://easyfitplan.firebaseio.com",
+    "project_id": "easyfitplan",
+    "storage_bucket": "easyfitplan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82838060789:android:49f37504a51006fc",
+        "android_client_info": {
+          "package_name": "dk.flemminglarsen.easyfitplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82838060789-uhp4o8tuq5b3vr4e08hhl5cjd3jqplvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dk.flemminglarsen.easyfitplan",
+            "certificate_hash": "61d5f7d255f4c954afa58e770755233861a8321b"
+          }
+        },
+        {
+          "client_id": "82838060789-ksp3dvbmj1f68mgp1hg7lcdfg8qmmhkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMexpTYtijgFvE0iUBVxw7sp9BweiDgl8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82838060789-ksp3dvbmj1f68mgp1hg7lcdfg8qmmhkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

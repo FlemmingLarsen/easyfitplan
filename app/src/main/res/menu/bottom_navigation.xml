@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    <item
+        android:id="@+id/menuLogout"
+        android:title="Logout"/>
+    -->
+
+    <item
+        android:id="@+id/nav_tracking"
+        android:icon="@drawable/ic_kitchen_black_24dp"
+        android:title="Tracking" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/nav_training"
+        android:icon="@drawable/ic_fitness_center_black_24dp"
+        android:title="Training" />
+
+    <item
+        android:id="@+id/nav_education"
+        android:icon="@drawable/ic_school_black_24dp"
+        android:title="Education" />
+
+</menu>
