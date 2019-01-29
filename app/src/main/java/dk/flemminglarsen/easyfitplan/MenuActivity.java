@@ -17,6 +17,12 @@ public class MenuActivity extends AppCompatActivity {
 
                 BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
                 bottomNav.setOnNavigationItemSelectedListener(navListener);
+                BottomNavigationViewHelper.disableShiftMode(bottomNav);
+
+                /*
+                BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_bar);
+                BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+                */
 
                 //If nothing is chosen, set fragmentcontainer to Trackingfragment - ie. as the default
                 if (savedInstanceState == null) {
