@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/exerciseScreen"
+    android:background="@drawable/grad_bg">
+
+    <LinearLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/buttonTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Training"
+        android:backgroundTint="@color/transparent"/>
+
+    <Button
+        android:id="@+id/buttonPrograms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Programs"
+        android:backgroundTint="@color/transparent"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bodyImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:src="@drawable/body" />
+
+    <Button
+        android:layout_below="@+id/button"
+        android:id="@+id/headButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

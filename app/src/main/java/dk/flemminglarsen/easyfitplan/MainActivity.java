@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //User Login with error messages
     private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        //SignIn if success
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    //If user is already signed in
     @Override
     protected void onStart() {
         super.onStart();
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //If user needs to signup
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

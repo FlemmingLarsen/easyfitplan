@@ -3,6 +3,7 @@ package dk.flemminglarsen.easyfitplan;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,13 +18,14 @@ public class MenuActivity extends AppCompatActivity {
                 BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
                 bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-                //I added this if statement to keep the selected fragment when rotating the device
+                //If nothing is chosen, set fragmentcontainer to Trackingfragment - ie. as the default
                 if (savedInstanceState == null) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new TrackingFragment()).commit();
                 }
         }
 
+        //Switch for bottomnavigation
         private BottomNavigationView.OnNavigationItemSelectedListener navListener =
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                         @Override

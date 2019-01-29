@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/buttonTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Training"
+        android:backgroundTint="@color/transparent"/>
+
+    <Button
+        android:id="@+id/buttonExercises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/buttonTraining"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Exercises"
+        android:backgroundTint="@color/transparent"/>
+
+    <LinearLayout
+        android:layout_below="@+id/buttonTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <GridLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/buttonExercises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+
+            android:background="@color/transparent"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:id="@+id/button1"
+            android:layout_width="130dp"
+            android:layout_gravity="left|top"
+            android:text="Weightlifting" />
+
+        <Button
+            android:background="@color/transparent"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:id="@+id/button2"
+            android:layout_width="130dp"
+            android:layout_gravity="left|top"
+            android:text="Cardio" />
+
+        <Button
+            android:background="@color/transparent"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:id="@+id/button3"
+            android:layout_width="130dp"
+            android:layout_gravity="left|top"
+            android:text="Swimming" />
+
+        <Button
+            android:background="@color/transparent"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:id="@+id/button4"
+            android:layout_width="130dp"
+            android:layout_gravity="left|top"
+            android:text="Interval" />
+
+
+
+
+    </GridLayout>
+
+
+</RelativeLayout>

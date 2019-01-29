@@ -9,16 +9,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class TrainingFragment extends Fragment {
+public class ProgramsFragment extends Fragment {
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_training, container, false);
+        View view = inflater.inflate(R.layout.fragment_programs, container, false);
 
+        Button btnTraining = (Button)view.findViewById(R.id.buttonTraining);
         Button btnExercises = (Button)view.findViewById(R.id.buttonExercises);
-        Button btnPrograms = (Button)view.findViewById(R.id.buttonPrograms);
+
+
+        // Training and Excercise buttons to fragments
+        btnTraining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new TrainingFragment());
+                fr.commit();
+            }
+        });
 
         btnExercises.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,14 +40,6 @@ public class TrainingFragment extends Fragment {
             }
         });
 
-        btnPrograms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction frt = getFragmentManager().beginTransaction();
-                frt.replace(R.id.fragment_container, new ProgramsFragment());
-                frt.commit();
-            }
-        });
         return view;
     }
 
