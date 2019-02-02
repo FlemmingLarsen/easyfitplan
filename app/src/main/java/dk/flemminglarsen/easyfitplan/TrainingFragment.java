@@ -17,9 +17,11 @@ public class TrainingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_training, container, false);
 
-        Button btnExercises = (Button)view.findViewById(R.id.buttonExercises);
-        Button btnPrograms = (Button)view.findViewById(R.id.buttonPrograms);
+        Button btnExercises = view.findViewById(R.id.buttonExercises);
+        Button btnPrograms = view.findViewById(R.id.buttonPrograms);
 
+
+        // Exercise and Programs buttons to fragments
         btnExercises.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -19,6 +19,7 @@ public class MenuActivity extends AppCompatActivity {
                 bottomNav.setOnNavigationItemSelectedListener(navListener);
                 BottomNavigationViewHelper.disableShiftMode(bottomNav);
 
+                //Old initiation of navigation menu (with shift mode)
                 /*
                 BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_bar);
                 BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
