@@ -97,6 +97,7 @@
 
     <EditText
         android:id="@+id/editTextPassword"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
@@ -113,21 +114,42 @@
         android:textSize="15sp"
         android:layout_below="@id/editTextEmail"/>
 
+    <!-- REMOVE VISIBILITY TO REVEAL-->
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:fontFamily="sans-serif-light"
+        android:paddingLeft="15dp"
+        android:layout_marginLeft="10dp"
+        android:paddingRight="15dp"
+        android:layout_marginRight="10dp"
+        android:hint="Please Enter Name"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_below="@id/editTextPassword"/>
+
     <Button
+        android:paddingTop="10dp"
         android:id="@+id/buttonSignUp"
         android:text="Sign Up"
         android:background="@color/transparent"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
+        android:layout_below="@id/editTextName"
         />
 
     <TextView
         android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
+        android:layout_below="@id/buttonSignUp"
         android:paddingTop="15dp"
         android:layout_centerInParent="true"
         android:text="Already have an account? Click here"/>

@@ -79,11 +79,12 @@ public class ExerciseFragment extends Fragment {
             }
         });
 
+        //Muscle buttons
         btnHead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new ProgramsFragment());
+                fr.replace(R.id.fragment_container, new EducationFragment());
                 fr.commit();
             }
         });

@@ -28,9 +28,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        progressBar = findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -38,7 +38,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.textViewLogin).setOnClickListener(this);
     }
 
-    //User Signup with error messages
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -67,7 +66,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        //Create user in Firebase and check if user alreadu exists
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -92,7 +90,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    //User confirm signup
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -100,7 +97,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 registerUser();
                 break;
 
-            //User return to singIn
             case R.id.textViewLogin:
                 finish();
                 startActivity(new Intent(this, MainActivity.class));

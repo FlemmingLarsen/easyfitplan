@@ -7,15 +7,17 @@
         android:title="Logout"/>
     -->
 
-    <item
-        android:id="@+id/nav_tracking"
-        android:icon="@drawable/ic_kitchen_black_24dp"
-        android:title="Tracking" />
+
 
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="Profile" />
+
+    <item
+        android:id="@+id/nav_tracking"
+        android:icon="@drawable/ic_kitchen_black_24dp"
+        android:title="Tracking" />
 
     <item
         android:id="@+id/nav_training"
