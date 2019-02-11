@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_bg">
+    android:background="@drawable/grad_bg"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/toptext"
@@ -10,17 +11,41 @@
         android:layout_marginRight="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to EasyFitApp. Please take the time to fill out the following information. That way, well be able to help you much better."/>
+        android:text="Please take the time to fill out the following information. Without it, we cannot help you."/>
 
-    <TextView
-        android:id="@+id/bottomtext"
+    <EditText
         android:layout_below="@+id/toptext"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="If you are ever in doubt with any function in the app. Look for this icon. Clicking it, will display a helping tip for anything it is placed next to. Have fun and enjoy."/>
+        android:hint="Your name"
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
+    <EditText
+        android:layout_below="@+id/editName"
+        android:hint="Your age"
+        android:id="@+id/editAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_below="@+id/editAge"
+        android:hint="Your sex"
+        android:id="@+id/editSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_below="@+id/editSex"
+        android:hint="Your Height"
+        android:id="@+id/editHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_below="@+id/editHeight"
+        android:hint="Your Weight"
+        android:id="@+id/editWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

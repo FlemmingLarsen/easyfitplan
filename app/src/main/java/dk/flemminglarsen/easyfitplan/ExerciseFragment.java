@@ -37,7 +37,7 @@ public class ExerciseFragment extends Fragment {
         final int[] x = new int[1];
         final int[] y = new int[1];
 
-        RelativeLayout exerciseFragment = null;
+       /* RelativeLayout exerciseFragment = null;
         exerciseFragment = (RelativeLayout)view.findViewById(R.id.exerciseScreen);
 
         //OnTouch for bodyimage
@@ -57,7 +57,7 @@ public class ExerciseFragment extends Fragment {
                 }
                 return true;
             }
-        });
+        });*/
 
 
         //Exercise and Programs buttons to fragments

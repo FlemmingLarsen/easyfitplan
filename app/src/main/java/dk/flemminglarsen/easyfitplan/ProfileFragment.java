@@ -27,6 +27,9 @@ public class ProfileFragment extends Fragment {
             String email = user.getEmail();
             profileEmail.setText(email);
 
+            /*String name = user.getDisplayName();
+            profileEmail.setText(name);*/
+
         }
 
         return view;
