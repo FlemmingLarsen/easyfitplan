@@ -1,20 +1,49 @@
 package dk.flemminglarsen.easyfitplan;
 
-import android.support.v7.app.AppCompatActivity;
+public class UserActivity {
 
-public class UserActivity extends AppCompatActivity {
-    public String name, email, age, sex, height, weight;
+    private String id;
+    private String name;
+    private String age;
+    private String gender;
+    private String height;
+    private String weight;
 
-    public UserActivity(String name, String email){
+
+    UserActivity(){
 
     }
 
-    public UserActivity(String name, String email, String age, String sex, String height, String weight) {
+    public UserActivity(String id, String name, String age, String gender, String height, String weight) {
+        this.id = id;
         this.name = name;
-        this.email = email;
         this.age = age;
-        this.sex = sex;
+        this.gender = gender;
         this.height = height;
         this.weight = weight;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return gender;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getWeight() {
+        return weight;
     }
 }
