@@ -19,18 +19,22 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        TextView profileEmail = view.findViewById(R.id.txtEmail);
+        TextView txtAge = view.findViewById(R.id.txtAge);
+        TextView txtName = view.findViewById(R.id.txtName);
         Button updateProfile = view.findViewById(R.id.btnUpdate);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+      /*  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
             String email = user.getEmail();
-            profileEmail.setText(email);
+            txtAge.setText(email);
 
-            /*String name = user.getDisplayName();
-            profileEmail.setText(name);*/
+            String name = user.getUid();
+            txtName.setText(name);
 
-        }
+            *//*String name = user.getDisplayName();
+            profileEmail.setText(name);*//*
+
+        }*/
 
         return view;
     }

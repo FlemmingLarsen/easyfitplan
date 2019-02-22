@@ -28,11 +28,11 @@ public class ExerciseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_excercise, container, false);
 
         //Top navigation buttons
-        Button btnTraining = (Button)view.findViewById(R.id.buttonTraining);
-        Button btnPrograms = (Button)view.findViewById(R.id.buttonPrograms);
+        Button btnTraining = view.findViewById(R.id.buttonTraining);
+        Button btnPrograms = view.findViewById(R.id.buttonPrograms);
 
         //Muscle buttons
-        Button btnHead = (Button)view.findViewById(R.id.headButton);
+        Button btnHead = view.findViewById(R.id.headButton);
 
         final int[] x = new int[1];
         final int[] y = new int[1];
