@@ -17,4 +17,21 @@
         completions."
     </string>
     <string name="title_activity_user_info">UserInfoActivity</string>
+    <string name="chestExercises">Chest Exercises</string>
+
+
+    <!--Chest Exercise descriptions -->
+    <string-array name="chest_exercises">
+        <item>Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</item>
+        <item>BMW</item>
+        <item>Benz</item>
+        <item>Ford</item>
+        <item>Toyota</item>
+        <item>Tesla</item>
+        <item>Honda</item>
+        <item>Hyundai</item>
+    </string-array>
+
+
+    <string name="bench_press">Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</string>
 </resources>

@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import dk.flemminglarsen.easyfitplan.R;
+
 public class ProfileFragment extends Fragment {
 
     @Nullable
@@ -23,7 +25,9 @@ public class ProfileFragment extends Fragment {
         TextView txtName = view.findViewById(R.id.txtName);
         Button updateProfile = view.findViewById(R.id.btnUpdate);
 
-      /*  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
             String email = user.getEmail();
             txtAge.setText(email);
@@ -31,10 +35,8 @@ public class ProfileFragment extends Fragment {
             String name = user.getUid();
             txtName.setText(name);
 
-            *//*String name = user.getDisplayName();
-            profileEmail.setText(name);*//*
 
-        }*/
+        }
 
         return view;
     }

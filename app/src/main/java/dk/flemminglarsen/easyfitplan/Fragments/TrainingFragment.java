@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import dk.flemminglarsen.easyfitplan.R;
 
 public class TrainingFragment extends Fragment {
 
@@ -26,7 +28,7 @@ public class TrainingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new ExerciseFragment());
+                fr.replace(R.id.fragment_container, new ChooseGroupFragment());
                 fr.commit();
             }
         });

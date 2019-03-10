@@ -1,11 +1,11 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Activities;
 
 public class UserActivity {
-    public String name;
-    public String age;
-    public String gender;
-    public String height;
-    public String weight;
+    public static String name;
+    public static String age;
+    public static String gender;
+    public static String height;
+    public static String weight;
 
     public UserActivity(){
 
@@ -13,17 +13,17 @@ public class UserActivity {
 
 
     public UserActivity(String name, String age, String gender, String height, String weight) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.height = height;
-        this.weight = weight;
+        UserActivity.name = name;
+        UserActivity.age = age;
+        UserActivity.gender = gender;
+        UserActivity.height = height;
+        UserActivity.weight = weight;
     }
 
 
 
     //Getters
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -46,22 +46,22 @@ public class UserActivity {
 
     //Setters
     public void setName(String name) {
-        this.name = name;
+        UserActivity.name = name;
     }
 
     public void setAge(String age) {
-        this.age = age;
+        UserActivity.age = age;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        UserActivity.gender = gender;
     }
 
     public void setHeight(String height) {
-        this.height = height;
+        UserActivity.height = height;
     }
 
     public void setWeight(String weight) {
-        this.weight = weight;
+        UserActivity.weight = weight;
     }
 }

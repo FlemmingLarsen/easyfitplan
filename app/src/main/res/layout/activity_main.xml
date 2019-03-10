@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/grad_bg"
-    tools:context="dk.flemminglarsen.easyfitplan.MainActivity">
+    tools:context="dk.flemminglarsen.easyfitplan.Activities.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

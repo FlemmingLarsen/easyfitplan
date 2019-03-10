@@ -1,31 +1,26 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Fragments;
 
 import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.support.v4.app.Fragment;
 
-public class ExerciseFragment extends Fragment {
+import dk.flemminglarsen.easyfitplan.R;
+
+public class ChooseGroupFragment extends Fragment {
 
 
     @SuppressLint("ClickableViewAccessibility")
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_excercise, container, false);
+        View view = inflater.inflate(R.layout.fragment_choose_group, container, false);
 
         //Top navigation buttons
         Button btnTraining = view.findViewById(R.id.buttonTraining);
@@ -33,11 +28,14 @@ public class ExerciseFragment extends Fragment {
 
         //Muscle buttons
         Button btnHead = view.findViewById(R.id.headButton);
+        btnHead.setBackgroundColor(Color.TRANSPARENT);
 
-        final int[] x = new int[1];
+        Button btnChest = view.findViewById(R.id.chestButton);
+
+       /* final int[] x = new int[1];
         final int[] y = new int[1];
 
-       /* RelativeLayout exerciseFragment = null;
+        RelativeLayout exerciseFragment = null;
         exerciseFragment = (RelativeLayout)view.findViewById(R.id.exerciseScreen);
 
         //OnTouch for bodyimage
@@ -57,8 +55,8 @@ public class ExerciseFragment extends Fragment {
                 }
                 return true;
             }
-        });*/
-
+        });
+*/
 
         //Exercise and Programs buttons to fragments
         btnTraining.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +83,15 @@ public class ExerciseFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new EducationFragment());
+                fr.commit();
+            }
+        });
+
+        btnChest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new ExerciseListviewFragment());
                 fr.commit();
             }
         });

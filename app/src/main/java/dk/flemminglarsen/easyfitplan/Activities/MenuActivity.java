@@ -1,13 +1,18 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Activities;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
+
+import dk.flemminglarsen.easyfitplan.Helperclasses.BottomNavigationViewHelper;
+import dk.flemminglarsen.easyfitplan.Fragments.EducationFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.ProfileFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.TrackingFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.TrainingFragment;
+import dk.flemminglarsen.easyfitplan.R;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -38,15 +43,19 @@ public class MenuActivity extends AppCompatActivity {
                                 switch (item.getItemId()) {
                                         case R.id.nav_profile:
                                                 selectedFragment = new ProfileFragment();
+
                                                 break;
                                         case R.id.nav_tracking:
                                                 selectedFragment = new TrackingFragment();
+
                                                 break;
                                         case R.id.nav_training:
                                                 selectedFragment = new TrainingFragment();
+
                                                 break;
                                         case R.id.nav_education:
                                                 selectedFragment = new EducationFragment();
+
                                                 break;
                                 }
 

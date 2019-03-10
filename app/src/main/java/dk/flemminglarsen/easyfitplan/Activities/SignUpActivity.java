@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+
+import dk.flemminglarsen.easyfitplan.R;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 

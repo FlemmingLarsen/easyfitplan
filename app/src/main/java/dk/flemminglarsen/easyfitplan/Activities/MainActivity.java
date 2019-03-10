@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,6 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import dk.flemminglarsen.easyfitplan.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -74,7 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     finish();
-                    Intent intent = new Intent(MainActivity.this, UserInfoActivity.class);
+
+                    // Remeber to change to UserInfoActivity when working with Firebase!!
+                    Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {

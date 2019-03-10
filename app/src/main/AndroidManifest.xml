@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".UserInfoActivity"
+            android:name=".Activities.UserInfoActivity"
             android:label="@string/title_activity_user_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,10 +27,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activities.SignUpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".Activities.MenuActivity"
             android:screenOrientation="portrait" />
     </application>
 

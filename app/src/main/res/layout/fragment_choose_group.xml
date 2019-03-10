@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/exerciseScreen"
+    android:background="@drawable/grad_bg">
+
+
+
+    <LinearLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/buttonTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Training"
+        android:backgroundTint="@color/transparent"/>
+
+    <Button
+        android:id="@+id/buttonPrograms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="210dp"
+        android:height="50dp"
+        android:text="Programs"
+        android:backgroundTint="@color/transparent"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button">
+
+    <ImageView
+        android:id="@+id/bodyImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/body" />
+
+        <Button
+            android:id="@+id/headButton"
+            android:background="@android:color/transparent"
+            android:layout_width="45dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/chestButton"
+            android:background="@android:color/transparent"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/headButton"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="60dp"/>
+
+        <Button
+            android:id="@+id/shoulderButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/chestButton"
+            android:layout_marginTop="105dp"/>
+
+        <Button
+            android:id="@+id/bicepsButton"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shoulderButton"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/chestButton" />
+
+        <Button
+            android:layout_width="37dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/bicepsButton"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/chestButton" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

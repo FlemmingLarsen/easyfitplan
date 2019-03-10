@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan;
+package dk.flemminglarsen.easyfitplan.Helperclasses;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;
