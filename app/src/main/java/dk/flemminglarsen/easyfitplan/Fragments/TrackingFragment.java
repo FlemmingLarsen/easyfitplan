@@ -15,5 +15,8 @@ public class TrackingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tracking, container, false);
+
+
+        //ToDo: Some kind of scanner and/or database for tracking food and calories
     }
 }

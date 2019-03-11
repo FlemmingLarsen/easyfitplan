@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">easyfitplan</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title_activity_user_information">Register User</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -19,17 +18,12 @@
     <string name="title_activity_user_info">UserInfoActivity</string>
     <string name="chestExercises">Chest Exercises</string>
 
-
-    <!--Chest Exercise descriptions -->
-    <string-array name="chest_exercises">
-        <item>Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</item>
-        <item>BMW</item>
-        <item>Benz</item>
-        <item>Ford</item>
-        <item>Toyota</item>
-        <item>Tesla</item>
-        <item>Honda</item>
-        <item>Hyundai</item>
+    <string-array name="activityLevel">
+        <item>Sedentary (No Exercise)</item>
+        <item>Light Exercise (1–2 days/week)</item>
+        <item>Moderate Exercise (3–5 days/week)</item>
+        <item>Heavy Exercise (6–7 days/week)</item>
+        <item>Athlete 2 times per day</item>
     </string-array>
 
 

@@ -25,8 +25,7 @@ public class ProfileFragment extends Fragment {
         TextView txtName = view.findViewById(R.id.txtName);
         Button updateProfile = view.findViewById(R.id.btnUpdate);
 
-
-
+        //ToDo: Get, calculate and show info from Firebase
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
             String email = user.getEmail();
@@ -35,7 +34,10 @@ public class ProfileFragment extends Fragment {
             String name = user.getUid();
             txtName.setText(name);
 
+        //ToDo: Calculate TDEE, BRM etc. on profile fragment
 
+
+        //ToDo: Implement users ability to edit database information
         }
 
         return view;

@@ -1,12 +1,7 @@
-package dk.flemminglarsen.easyfitplan.Fragments;
+package dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -15,14 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.Arrays;
-
-import dk.flemminglarsen.easyfitplan.Activities.MainActivity;
+import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ChestExerciseDetailsFragment;
 import dk.flemminglarsen.easyfitplan.Helperclasses.listviewAdapter;
 import dk.flemminglarsen.easyfitplan.R;
 
 
-public class ExerciseListviewFragment extends Fragment {
+public class ChestExerciseListviewFragment extends Fragment {
 
 
     Toolbar mToolbar;
@@ -55,7 +48,7 @@ public class ExerciseListviewFragment extends Fragment {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
 
-                  ExerciseDetailsFragment frt = new ExerciseDetailsFragment();
+                  ChestExerciseDetailsFragment frt = new ChestExerciseDetailsFragment();
                   FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
                   Bundle bundle = new Bundle();

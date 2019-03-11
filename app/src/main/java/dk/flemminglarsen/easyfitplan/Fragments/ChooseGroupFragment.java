@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ChestExerciseListviewFragment;
 import dk.flemminglarsen.easyfitplan.R;
 
 public class ChooseGroupFragment extends Fragment {
@@ -22,14 +23,14 @@ public class ChooseGroupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_choose_group, container, false);
 
+
+        //ToDo: At least two more muscle groups
         //Top navigation buttons
         Button btnTraining = view.findViewById(R.id.buttonTraining);
         Button btnPrograms = view.findViewById(R.id.buttonPrograms);
 
         //Muscle buttons
         Button btnHead = view.findViewById(R.id.headButton);
-        btnHead.setBackgroundColor(Color.TRANSPARENT);
-
         Button btnChest = view.findViewById(R.id.chestButton);
 
        /* final int[] x = new int[1];
@@ -91,7 +92,7 @@ public class ChooseGroupFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new ExerciseListviewFragment());
+                fr.replace(R.id.fragment_container, new ChestExerciseListviewFragment());
                 fr.commit();
             }
         });

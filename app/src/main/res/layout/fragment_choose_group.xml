@@ -61,6 +61,7 @@
 
         <Button
             android:id="@+id/shoulderButton"
+            android:background="@android:color/transparent"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_toRightOf="@+id/chestButton"
@@ -68,6 +69,7 @@
 
         <Button
             android:id="@+id/bicepsButton"
+            android:background="@android:color/transparent"
             android:layout_width="37dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/shoulderButton"
@@ -76,6 +78,7 @@
             android:layout_toEndOf="@+id/chestButton" />
 
         <Button
+            android:background="@android:color/transparent"
             android:layout_width="37dp"
             android:layout_height="60dp"
             android:layout_below="@+id/bicepsButton"

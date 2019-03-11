@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activities.UserInfoActivity"
+            android:icon="@drawable/ic_app_icon"
             android:label="@string/title_activity_user_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
