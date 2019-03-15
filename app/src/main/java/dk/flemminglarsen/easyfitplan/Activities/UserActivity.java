@@ -1,19 +1,20 @@
 package dk.flemminglarsen.easyfitplan.Activities;
 
 public class UserActivity {
-    private String name, age, gender, height, weight;
+    public String name, age, gender, height, weight, activity;
 
 
     public UserActivity() {
 
     }
 
-    public UserActivity(String name, String age, String gender, String height, String weight) {
+    public UserActivity(String name, String age, String gender, String height, String weight, String activity) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.height = height;
         this.weight = weight;
+        this.activity = activity;
     }
 
     public String getName() {
@@ -54,6 +55,14 @@ public class UserActivity {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.name = activity;
     }
 
 

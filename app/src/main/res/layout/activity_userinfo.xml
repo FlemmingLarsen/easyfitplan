@@ -103,6 +103,7 @@
     <!-- TODO: Spinner String needs to be handled for each selection -->
     <Spinner
         android:id="@+id/spinner"
+        android:entries="@array/activityLevel"
         android:layout_toRightOf="@+id/activityLevel"
         android:layout_below="@+id/radioGrp"
         android:layout_width="match_parent"
