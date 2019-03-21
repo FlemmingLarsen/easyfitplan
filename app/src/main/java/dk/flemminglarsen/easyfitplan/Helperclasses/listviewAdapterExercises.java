@@ -12,14 +12,14 @@ import android.widget.TextView;
 
 import dk.flemminglarsen.easyfitplan.R;
 
-public class listviewAdapter extends ArrayAdapter<String> {
+public class listviewAdapterExercises extends ArrayAdapter<String> {
 
     private String [] names;
     private int [] gifs;
     private Context mContext;
 
-    public listviewAdapter(@NonNull Context context, String[] exerciseNames, int[] exerciseGifs, String[] chestExerciseDescription) {
-        super(context, R.layout.listview_item);
+    public listviewAdapterExercises(@NonNull Context context, String[] exerciseNames, int[] exerciseGifs, String[] chestExerciseDescription) {
+        super(context, R.layout.listview_item_exercises);
 
         this.names = exerciseNames;
         this.gifs = exerciseGifs;
@@ -37,7 +37,7 @@ public class listviewAdapter extends ArrayAdapter<String> {
         ViewHolder mViewHolder = new ViewHolder();
         if(convertView == null) {
             LayoutInflater mInflator = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflator.inflate(R.layout.listview_item, parent, false);
+            convertView = mInflator.inflate(R.layout.listview_item_exercises, parent, false);
             mViewHolder.mExercise = convertView.findViewById(R.id.imageView);
             mViewHolder.mName = convertView.findViewById(R.id.textView);
             convertView.setTag(mViewHolder);

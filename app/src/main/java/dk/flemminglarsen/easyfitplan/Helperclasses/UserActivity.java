@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan.Activities;
+package dk.flemminglarsen.easyfitplan.Helperclasses;
 
 public class UserActivity {
     public String name, age, gender, height, weight, activity;
