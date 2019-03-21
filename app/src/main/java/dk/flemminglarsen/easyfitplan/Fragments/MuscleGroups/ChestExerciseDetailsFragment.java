@@ -2,6 +2,7 @@ package dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -57,15 +58,9 @@ public class ChestExerciseDetailsFragment extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
 
-
-                        Bundle bundle = new Bundle();
-                        bundle.putString("key","Jhon Doe"); // set your parameteres
-
-                        TrainingFragment nextFragment = new TrainingFragment();
-                        nextFragment.setArguments(bundle);
-
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.test, nextFragment).commit();
+                        /*Intent i = new Intent(getActivity().getApplicationContext(), Second.class);
+                        i.putExtra("SpinnerValue", spinner.getSelectedItem().toString());
+                        getActivity().startActivity(i);*/
 
 
                         return true;

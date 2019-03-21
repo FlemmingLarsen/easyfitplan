@@ -28,9 +28,15 @@ public class ChestExerciseListviewFragment extends Fragment {
                                 R.drawable.dumbbellflyers,
                                 R.drawable.pushups};
 
-    String[] chestExerciseDescription = {"bench_press",
-                                        "Two",
-                                        "Three"};
+    String[] chestExerciseDescription = {"Preparation\n" +"\n" +"Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip.\n" + "\n" +"Execution\n" +"\n" +"Lower weight to chest. Press bar upward until arms are extended. Repeat.\n" +"\n" +
+                                        "Comments\n" +"Range of motion will be compromised if grip is too wide.",
+
+                                        "Preparation\n" + "\n" +"Grasp two dumbbells. Lie supine on bench. Support dumbbells above chest with arms fixed in slightly bent position. Internally rotate shoulders so elbows point out to sides.\n" + "\n" +"Execution\n" + "\n" +
+                                        "Lower dumbbells to sides until chest muscles are stretched with elbows fixed in slightly bent position. Bring dumbbells together in wide hugging motion until dumbbells are nearly together. Repeat.\n" + "\n" + "Comments\n" +
+                                        "Keep shoulders internally rotated so elbows point downward at bottom position and outward at top position. Keep elbows at fixed angle, only slightly bent.",
+
+                                        "Preparation\n" +"\n" +"Lie prone on floor with hands slightly wider than shoulder width. Raise body up off floor by extending arms with body straight.\n" +"\n" +"Execution\n" +"\n" +
+                                        "Keeping body straight, lower body to floor by bending arms. Push body up until arms are extended. Repeat.\n" +"\n" +"Comments\n" +"Both upper and lower body must be kept straight throughout movement."};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

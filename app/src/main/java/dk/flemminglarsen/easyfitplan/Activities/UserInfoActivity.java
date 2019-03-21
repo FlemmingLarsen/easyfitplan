@@ -126,9 +126,18 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
         //If conditions are met create user in Firebase and go to users profile
         else{
             String UID = FirebaseAuth.getInstance().getUid();
-            UserActivity updateUser = new UserActivity(name, age, gender, height, weight, activity);
+            DatabaseReference current_user = databaseReference.child(UID);
+            current_user.child("name").setValue(name);
+            current_user.child("age").setValue(age);
+            current_user.child("gender").setValue(gender);
+            current_user.child("height").setValue(height);
+            current_user.child("weight").setValue(weight);
+            current_user.child("activity").setValue(activity);
+
+
+            /*UserActivity updateUser = new UserActivity(name, age, gender, height, weight, activity);
             databaseReference.setValue(UID);
-            databaseReference.child(UID).setValue(updateUser);
+            databaseReference.child(UID).setValue(updateUser);*/
 
             Intent intent = new Intent(UserInfoActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

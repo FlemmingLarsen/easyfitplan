@@ -12,11 +12,20 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="title_activity_user_info">UserInfoActivity</string>
     <string name="chestExercises">Chest Exercises</string>
+
+    <!-- Strings related to Userprofile -->
+    <string name="hello_user">Welcome %1$s!</string>
+    <string name="information">From the information you just provided, the following calculations have been made:</string>
+    <string name="metabolic_rate">Your Basic Metablic Rate is %1$s kcal. That means that you burn that many calories every day, just by sitting down and keeping your organs fully functional!</string>
+    <string name="energy_expenditure">Your Total Daily Energy Expenditure is %1$s kcal. That includes all the activities you do on a weekly basis. Go you!</string>
+
+    <string name="calorie_count">To maintain a healthy body, it is important not to give it too much or too little to work with. For starters we recommend you stay within these limits.</string>
+    <string name="weight_loss">Weightloss:\n %1$s kcal.</string>
+    <string name="weight_stay">Maintain:\n %1$s kcal.</string>
+    <string name="weight_gain">Weightgain:\n %1$s kcal.</string>
 
     <string-array name="activityLevel">
         <item>Sedentary (No Exercise)</item>
@@ -28,4 +37,5 @@
 
 
     <string name="bench_press">Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</string>
+
 </resources>
