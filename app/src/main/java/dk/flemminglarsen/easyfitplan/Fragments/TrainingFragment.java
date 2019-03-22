@@ -47,7 +47,7 @@ public class TrainingFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new ChooseGroupFragment());
-                fr.commit();
+                fr.addToBackStack(null).commit();
             }
         });
 
@@ -56,7 +56,7 @@ public class TrainingFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction frt = getFragmentManager().beginTransaction();
                 frt.replace(R.id.fragment_container, new ProgramsFragment());
-                frt.commit();
+                frt.addToBackStack(null).commit();
             }
         });
 

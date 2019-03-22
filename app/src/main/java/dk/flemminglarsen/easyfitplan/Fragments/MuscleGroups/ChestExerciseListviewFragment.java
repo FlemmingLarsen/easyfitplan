@@ -63,7 +63,7 @@ public class ChestExerciseListviewFragment extends Fragment {
 
                   frt.setArguments(bundle);
                   transaction.replace(R.id.fragment_container, frt);
-                  transaction.commit();
+                  transaction.addToBackStack(null).commit();
 
               }
           });

@@ -1,8 +1,10 @@
 package dk.flemminglarsen.easyfitplan.Activities;
 
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,6 +17,7 @@ import dk.flemminglarsen.easyfitplan.Fragments.TrainingFragment;
 import dk.flemminglarsen.easyfitplan.R;
 
 public class MenuActivity extends AppCompatActivity {
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -66,4 +69,23 @@ public class MenuActivity extends AppCompatActivity {
                         }
                 };
 
+
+    @Override
+    public void onBackPressed() {
+        int backStackEntryCount = getSupportFragmentManager().getBackStackEntryCount();
+        if (backStackEntryCount == 0) {
+            new AlertDialog.Builder(this)
+                    .setMessage("Are you sure you want to exit?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MenuActivity.this.finish();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }else{
+            super.onBackPressed();
+        }
+    }
 }
