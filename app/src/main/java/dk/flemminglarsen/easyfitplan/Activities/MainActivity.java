@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (task.isSuccessful()) {
                     finish();
 
-                    // Remeber to change to UserInfoActivity when working with Firebase!!
                     Intent intent = new Intent(MainActivity.this, UserInfoActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //If user needs to signup
+    //If user needs to sign up
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

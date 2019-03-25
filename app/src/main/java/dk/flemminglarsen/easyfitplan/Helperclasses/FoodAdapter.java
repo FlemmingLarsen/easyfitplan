@@ -25,7 +25,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>{
         return new ViewHolder(view);
     }
 
-    //WHY ARE FOODS GETTING CARBS?!?!?
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.foods.setText(list.get(position).getName());

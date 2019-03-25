@@ -3,10 +3,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/grad_bg">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
     <Button
         android:id="@+id/buttonExercises"
         android:layout_width="wrap_content"
@@ -35,13 +31,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-   <ExpandableListView
-       android:layout_below="@id/test"
-       android:id="@+id/weekDays"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
-
-   </ExpandableListView>
+    <Button
+        android:id="@+id/btnMonday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test"
+        android:text="Monday"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
 
 
 

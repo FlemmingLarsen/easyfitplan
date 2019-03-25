@@ -142,12 +142,6 @@ public class ProfileFragment extends Fragment {
     usersRef.addListenerForSingleValueEvent(valueEventListener);
 
 
-        //ToDo: Get, calculate and show info from Firebase
-
-
-        //ToDo: Calculate TDEE, BRM etc. on profile fragment
-
-
         //ToDo: Implement users ability to edit database information
 
         return view;

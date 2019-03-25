@@ -12,13 +12,13 @@ import android.widget.TextView;
 
 import dk.flemminglarsen.easyfitplan.R;
 
-public class listviewAdapterExercises extends ArrayAdapter<String> {
+public class ListviewAdapterExercises extends ArrayAdapter<String> {
 
     private String [] names;
     private int [] gifs;
     private Context mContext;
 
-    public listviewAdapterExercises(@NonNull Context context, String[] exerciseNames, int[] exerciseGifs, String[] chestExerciseDescription) {
+    public ListviewAdapterExercises(@NonNull Context context, String[] exerciseNames, int[] exerciseGifs, String[] chestExerciseDescription) {
         super(context, R.layout.listview_item_exercises);
 
         this.names = exerciseNames;

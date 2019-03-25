@@ -88,9 +88,7 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
 
     }
 
-
-    //ToDo: Handle radiobutton Strings
-
+    //Update user info i realtime database
     private void updateDatabase() {
 
         String name = editName.getText().toString().trim();
@@ -133,11 +131,6 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
             current_user.child("height").setValue(height);
             current_user.child("weight").setValue(weight);
             current_user.child("activity").setValue(activity);
-
-
-            /*UserActivity updateUser = new UserActivity(name, age, gender, height, weight, activity);
-            databaseReference.setValue(UID);
-            databaseReference.child(UID).setValue(updateUser);*/
 
             Intent intent = new Intent(UserInfoActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

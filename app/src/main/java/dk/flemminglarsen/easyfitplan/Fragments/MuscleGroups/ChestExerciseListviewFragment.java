@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import dk.flemminglarsen.easyfitplan.Helperclasses.listviewAdapterExercises;
+import dk.flemminglarsen.easyfitplan.Helperclasses.ListviewAdapterExercises;
 import dk.flemminglarsen.easyfitplan.R;
 
 
@@ -46,7 +46,7 @@ public class ChestExerciseListviewFragment extends Fragment {
           mListView = view.findViewById(R.id.listview);
           mToolbar.setTitle(getResources().getString(R.string.chestExercises));
 
-          listviewAdapterExercises mAdapter = new listviewAdapterExercises(getActivity(), chestExerciseNames, chestExerciseGifs, chestExerciseDescription);
+          ListviewAdapterExercises mAdapter = new ListviewAdapterExercises(getActivity(), chestExerciseNames, chestExerciseGifs, chestExerciseDescription);
           mListView.setAdapter(mAdapter);
 
           mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

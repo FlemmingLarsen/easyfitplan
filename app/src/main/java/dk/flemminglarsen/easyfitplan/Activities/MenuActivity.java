@@ -70,6 +70,7 @@ public class MenuActivity extends AppCompatActivity {
                 };
 
 
+    //When backbutton is pressed while backstack is empty, promt user for input for exiting the app
     @Override
     public void onBackPressed() {
         int backStackEntryCount = getSupportFragmentManager().getBackStackEntryCount();

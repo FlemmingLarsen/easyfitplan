@@ -33,31 +33,6 @@ public class ChooseGroupFragment extends Fragment {
         Button btnHead = view.findViewById(R.id.headButton);
         Button btnChest = view.findViewById(R.id.chestButton);
 
-       /* final int[] x = new int[1];
-        final int[] y = new int[1];
-
-        RelativeLayout exerciseFragment = null;
-        exerciseFragment = (RelativeLayout)view.findViewById(R.id.exerciseScreen);
-
-        //OnTouch for bodyimage
-        exerciseFragment.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                x[0] = (int) event.getX();
-                y[0] = (int) event.getY();
-
-                Toast.makeText(getContext(), "Testing", Toast.LENGTH_SHORT).show();
-
-                // x1            y1            x2            y2             ????????????????
-                if(x[0] > 250 && y[0] > 100 && x[0] < 375 && y[0] < 300){
-                    FragmentTransaction fr = getFragmentManager().beginTransaction();
-                    fr.replace(R.id.fragment_container, new EducationFragment());
-                    fr.commit();
-                }
-                return true;
-            }
-        });
-*/
 
         //Exercise and Programs buttons to fragments
         btnTraining.setOnClickListener(new View.OnClickListener() {

@@ -1,11 +1,8 @@
 package dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups;
 
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -18,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import dk.flemminglarsen.easyfitplan.Fragments.TrainingFragment;
+import dk.flemminglarsen.easyfitplan.Helperclasses.DatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
 public class ChestExerciseDetailsFragment extends Fragment {
@@ -26,8 +24,11 @@ public class ChestExerciseDetailsFragment extends Fragment {
     ImageView mImageView;
     TextView textView;
     Button btnAdd;
-    String chestExerciseNames, chestExerciseGifs, chestExerciseDescription;
+    String exerciseName;
+    String weekDays;
+    String newEntry;
 
+    DatabaseHelper mDatabaseHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,11 +44,11 @@ public class ChestExerciseDetailsFragment extends Fragment {
             mToolbar.setTitle(bundle.getString("chestExerciseNames"));
             mImageView.setImageResource(bundle.getInt("chestExerciseGifs"));
             textView.setText(bundle.getString("chestExerciseDescription"));
+            mDatabaseHelper = new DatabaseHelper(getActivity());
 
 
         }
 
-        //ToDo: Add Exercises to week days
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,17 +57,20 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
-                    public boolean onMenuItemClick(MenuItem item) {
+                    public boolean onMenuItemClick(MenuItem weekDay) {
 
-                        /*Intent i = new Intent(getActivity().getApplicationContext(), Second.class);
-                        i.putExtra("SpinnerValue", spinner.getSelectedItem().toString());
-                        getActivity().startActivity(i);*/
+                        /*exerciseName = bundle.getString("chestExerciseNames");*/
+                        weekDays = weekDay.getTitle().toString();
+                        newEntry = bundle.getString("chestExerciseNames");
+
+                        if(newEntry != null) {
+                            AddData(newEntry);
+                        }
 
 
-                        return true;
 
-
-
+                        /*sendData();*/
+                return true;
                     }
                 });
 
@@ -77,5 +81,16 @@ public class ChestExerciseDetailsFragment extends Fragment {
         return view;
     }
 
+        public void AddData(String newEntry){
+            boolean insertData = mDatabaseHelper.addData(newEntry);
+
+            if(insertData == true) {
+                Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        }
 
 }
+
+

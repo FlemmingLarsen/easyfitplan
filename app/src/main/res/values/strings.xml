@@ -19,10 +19,10 @@
     <!-- Strings related to Userprofile -->
     <string name="hello_user">Welcome %1$s!</string>
     <string name="information">From the information you just provided, the following calculations have been made:</string>
-    <string name="metabolic_rate">Your Basic Metablic Rate is %1$s kcal. That means that you burn that many calories every day, just by sitting down and keeping your organs fully functional!</string>
-    <string name="energy_expenditure">Your Total Daily Energy Expenditure is %1$s kcal. That includes all the activities you do on a weekly basis. Go you!</string>
+    <string name="metabolic_rate">Your BMR (Basic Metablic Rate) is %1$s kcal. That means that you burn that many calories every day, just by sitting down and keeping your organs fully functional!</string>
+    <string name="energy_expenditure">Your TDEE (Total Daily Energy Expenditure) is %1$s kcal. That is a daily average and includes all the activities you do on a weekly basis. Go you!</string>
 
-    <string name="calorie_count">To maintain a healthy body, it is important not to give it too much or too little to work with. For starters we recommend you stay within these limits.</string>
+    <string name="calorie_count">To maintain a healthy body, it is important not to give it too much or too little to work with. It is recommended that you stay within these limits.</string>
     <string name="weight_loss">Weightloss:\n %1$s kcal.</string>
     <string name="weight_stay">Maintain:\n %1$s kcal.</string>
     <string name="weight_gain">Weightgain:\n %1$s kcal.</string>
@@ -35,7 +35,19 @@
         <item>Athlete 2 times per day</item>
     </string-array>
 
+    <string-array name="dept_array">
+        <item>Vegetable</item>
+        <item>Fruits</item>
+        <item>Grocery</item>
+        <item>Electronics</item>
+        <item>Books</item>
+        <item>Language</item>
+    </string-array>
 
+    <!-- Strings related to exercisedescribtions -->
     <string name="bench_press">Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</string>
+
+
+    <string name="delete_exercise">Delete Exercise</string>
 
 </resources>
