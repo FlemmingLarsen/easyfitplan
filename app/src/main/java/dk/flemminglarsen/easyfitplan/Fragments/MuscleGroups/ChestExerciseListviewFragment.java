@@ -40,7 +40,7 @@ public class ChestExerciseListviewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_exercise_listview, container, false);
+       View view = inflater.inflate(R.layout.fragment_exercise_listview_chest, container, false);
 
           mToolbar = view.findViewById(R.id.toolbar);
           mListView = view.findViewById(R.id.listview);

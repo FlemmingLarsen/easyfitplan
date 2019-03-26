@@ -22,24 +22,25 @@
         android:text="Programs"
         android:backgroundTint="@color/transparent"/>
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:text="test"
-        android:layout_below="@id/buttonPrograms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/btnMonday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/test"
+        android:layout_below="@+id/buttonPrograms"
         android:text="Monday"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/btnTuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMonday"
+        android:text="Tuesday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

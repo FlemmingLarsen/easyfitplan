@@ -4,7 +4,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +15,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import dk.flemminglarsen.easyfitplan.Fragments.ChooseGroupFragment;
 import dk.flemminglarsen.easyfitplan.Helperclasses.DatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
 
-public class MondayFragment extends Fragment {
+public class TuesdayFragment extends Fragment {
 
     private static final String TAG = "ListDataActivity";
     DatabaseHelper mDatabaseHelper;
@@ -41,7 +39,7 @@ public class MondayFragment extends Fragment {
 
     //Get data from column 1 and add it to the listview
     private void populateListView() {
-        Cursor data = mDatabaseHelper.getMonday();
+        Cursor data = mDatabaseHelper.getTuesday();
         ArrayList<String> listData = new ArrayList<>();
         while (data.moveToNext()){
             listData.add(data.getString(1));

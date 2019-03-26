@@ -2,8 +2,8 @@
     <string name="app_name">easyfitplan</string>
 
 
-    <string name="title_activity_user_information">Register User</string>
     <!-- Strings related to login -->
+    <string name="title_activity_user_information">Register User</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -15,6 +15,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="title_activity_user_info">UserInfoActivity</string>
     <string name="chestExercises">Chest Exercises</string>
+    <string name="shoulderExercises">Shoulder Exercises</string>
 
     <!-- Strings related to Userprofile -->
     <string name="hello_user">Welcome %1$s!</string>
@@ -35,19 +36,11 @@
         <item>Athlete 2 times per day</item>
     </string-array>
 
-    <string-array name="dept_array">
-        <item>Vegetable</item>
-        <item>Fruits</item>
-        <item>Grocery</item>
-        <item>Electronics</item>
-        <item>Books</item>
-        <item>Language</item>
-    </string-array>
-
     <!-- Strings related to exercisedescribtions -->
     <string name="bench_press">Preparation: Lie supine on bench. Dismount barbell from rack over upper chest using wide oblique overhand grip./n Execution: Lower weight to chest. Press bar upward until arms are extended. Repeat.</string>
 
-
+    <!-- Assorted Strings -->
     <string name="delete_exercise">Delete Exercise</string>
+    <string name="mondayOverview">An overview of Mondays exercises</string>
 
 </resources>

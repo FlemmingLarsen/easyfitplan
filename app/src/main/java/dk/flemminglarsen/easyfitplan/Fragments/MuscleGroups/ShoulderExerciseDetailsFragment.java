@@ -14,11 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import dk.flemminglarsen.easyfitplan.Fragments.TrainingFragment;
 import dk.flemminglarsen.easyfitplan.Helperclasses.DatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
-public class ChestExerciseDetailsFragment extends Fragment {
+public class ShoulderExerciseDetailsFragment extends Fragment {
 
     Toolbar mToolbar;
     ImageView mImageView;
@@ -41,9 +40,9 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
         final Bundle bundle = getArguments();
         if(bundle != null){
-            mToolbar.setTitle(bundle.getString("chestExerciseNames"));
-            mImageView.setImageResource(bundle.getInt("chestExerciseGifs"));
-            textView.setText(bundle.getString("chestExerciseDescription"));
+            mToolbar.setTitle(bundle.getString("shoulderExerciseNames"));
+            mImageView.setImageResource(bundle.getInt("shoulderExerciseGifs"));
+            textView.setText(bundle.getString("shoulderExerciseDescription"));
             mDatabaseHelper = new DatabaseHelper(getActivity());
 
 
@@ -61,7 +60,7 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
                         /*exerciseName = bundle.getString("chestExerciseNames");*/
                         weekDays = weekDay.getTitle().toString();
-                        newEntry = bundle.getString("chestExerciseNames");
+                        newEntry = bundle.getString("shoulderExerciseNames");
 
                         if(newEntry != null) {
                             AddData(newEntry, weekDays);

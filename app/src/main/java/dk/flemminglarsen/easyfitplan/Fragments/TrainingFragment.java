@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import dk.flemminglarsen.easyfitplan.Fragments.Weekdays.MondayFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.Weekdays.TuesdayFragment;
 import dk.flemminglarsen.easyfitplan.R;
 
 public class TrainingFragment extends Fragment {
@@ -24,7 +25,7 @@ public class TrainingFragment extends Fragment {
         Button btnExercises = view.findViewById(R.id.buttonExercises);
         Button btnPrograms = view.findViewById(R.id.buttonPrograms);
         Button btnMonday = view.findViewById(R.id.btnMonday);
-        TextView textView = view.findViewById(R.id.test);
+        Button btnTuesday = view.findViewById(R.id.btnTuesday);
 
         // Exercise and Programs buttons to fragments
         btnExercises.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,15 @@ public class TrainingFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction frt = getFragmentManager().beginTransaction();
                 frt.replace(R.id.fragment_container, new MondayFragment());
+                frt.addToBackStack(null).commit();
+            }
+        });
+
+        btnTuesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction frt = getFragmentManager().beginTransaction();
+                frt.replace(R.id.fragment_container, new TuesdayFragment());
                 frt.addToBackStack(null).commit();
             }
         });

@@ -12,7 +12,8 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
-    private static final String TABLE_NAME = "people_table";
+    private static final String TABLE_NAME = "exercises";
+    private static final String COL0 = "day";
     private static final String COL1 = "ID";
     private static final String COL2 = "name";
 
@@ -23,7 +24,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 +" TEXT)";
+        String createTable = "CREATE TABLE " + TABLE_NAME + "("
+                + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL0 + " TEXT," + COL2 + " TEXT" + ");";
+        /*String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT, " + COL0 + "TEXT)";*/
         db.execSQL(createTable);
     }
 
@@ -33,12 +36,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item) {
+    public boolean addData(String item, String day) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, item);
+        contentValues.put(COL0, day);
 
-        Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + item + "and " + day + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -50,11 +54,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //Get mondays from database
+    public Cursor getMonday(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Monday" + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    //Get tuesdays from database
+    public Cursor getTuesday(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Tuesday" + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+
     //Get all the data from database
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
+        Log.d(TAG, "addData: query: " + data);
         return data;
     }
 
@@ -68,6 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+/*  For later use
     //Updates the name field
     public void updateName(String newName, int id, String oldName){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -77,7 +100,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "updateName: query: " + query);
         Log.d(TAG, "updateName: Setting name to " + newName);
         db.execSQL(query);
-    }
+    }*/
+
 
     //Delete from database
     public void deleteName(int id, String name){

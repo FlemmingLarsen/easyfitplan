@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ChestExerciseListviewFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ShoulderExerciseDetailsFragment;
+import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ShoulderExerciseListviewFragment;
 import dk.flemminglarsen.easyfitplan.R;
 
 public class ChooseGroupFragment extends Fragment {
@@ -32,6 +34,7 @@ public class ChooseGroupFragment extends Fragment {
         //Muscle buttons
         Button btnHead = view.findViewById(R.id.headButton);
         Button btnChest = view.findViewById(R.id.chestButton);
+        Button btnShoulder = view.findViewById(R.id.shoulderButton);
 
 
         //Exercise and Programs buttons to fragments
@@ -68,6 +71,15 @@ public class ChooseGroupFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new ChestExerciseListviewFragment());
+                fr.addToBackStack(null).commit();
+            }
+        });
+
+        btnShoulder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new ShoulderExerciseListviewFragment());
                 fr.addToBackStack(null).commit();
             }
         });
