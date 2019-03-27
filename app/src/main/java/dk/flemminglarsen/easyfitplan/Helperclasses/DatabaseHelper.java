@@ -37,13 +37,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item, String day) {
+    public boolean addData(String name, String day) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, item);
+        contentValues.put(COL2, name);
         contentValues.put(COL0, day);
 
-        Log.d(TAG, "addData: Adding " + item + "and " + day + " to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + name + "and " + day + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -97,6 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
     }
 
+
     //Get mondays from database
     public Cursor getMonday(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -149,5 +150,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-
 }
