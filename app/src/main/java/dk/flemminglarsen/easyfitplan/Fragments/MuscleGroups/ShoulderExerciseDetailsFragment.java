@@ -63,7 +63,13 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
                         newEntry = bundle.getString("shoulderExerciseNames");
 
                         if(newEntry != null) {
-                            AddData(newEntry, weekDays);
+                            Boolean check = mDatabaseHelper.checkExists(newEntry, weekDays);
+                            if(check == true ){
+                                AddData(newEntry, weekDays);
+                            }else{
+                                Toast.makeText(getActivity(), newEntry + " is already on " + weekDays, Toast.LENGTH_SHORT).show();
+                            }
+
                         }
 
                 return true;

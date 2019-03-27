@@ -3,7 +3,7 @@ package dk.flemminglarsen.easyfitplan.Helperclasses;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -16,6 +16,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL0 = "day";
     private static final String COL1 = "ID";
     private static final String COL2 = "name";
+    private String name;
+    private String day;
 
 
     public DatabaseHelper(Context context) {
@@ -26,7 +28,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + "("
                 + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL0 + " TEXT," + COL2 + " TEXT" + ");";
-        /*String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT, " + COL0 + "TEXT)";*/
         db.execSQL(createTable);
     }
 
@@ -90,19 +91,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-/*  For later use
-    //Updates the name field
-    public void updateName(String newName, int id, String oldName){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
-                " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + oldName + "'";
-        Log.d(TAG, "updateName: query: " + query);
-        Log.d(TAG, "updateName: Setting name to " + newName);
-        db.execSQL(query);
-    }*/
-
-
     //Delete from database
     public void deleteName(int id, String name){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -112,6 +100,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "deleteName: query: " + query);
         Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);
+    }
+
+    //Check if exercise already exists on the chosen day
+    public boolean checkExists(String newEntry, String weekDays){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL2 +  "= '" + newEntry + "' AND " + COL0 + "= '"+ weekDays +"' "  ;
+        Cursor data = db.rawQuery(query, null);
+            if(data.getCount() > 0){
+                return false;
+            }else{
+                return true;
+            }
     }
 
 }
