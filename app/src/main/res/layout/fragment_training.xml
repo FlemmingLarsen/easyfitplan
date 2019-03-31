@@ -42,5 +42,55 @@
         android:backgroundTint="@color/transparent"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/btnWednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnTuesday"
+        android:text="Wednesday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnThursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnWednesday"
+        android:text="Thursday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnFriday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnThursday"
+        android:text="Friday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnSaturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFriday"
+        android:text="Saturday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnSunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSaturday"
+        android:text="Sunday"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

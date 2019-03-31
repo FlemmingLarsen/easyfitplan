@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import dk.flemminglarsen.easyfitplan.Fragments.FoodFragment;
 import dk.flemminglarsen.easyfitplan.Helperclasses.BottomNavigationViewHelper;
 import dk.flemminglarsen.easyfitplan.Fragments.EducationFragment;
 import dk.flemminglarsen.easyfitplan.Fragments.ProfileFragment;
@@ -49,7 +50,7 @@ public class MenuActivity extends AppCompatActivity {
 
                                                 break;
                                         case R.id.nav_tracking:
-                                                selectedFragment = new TrackingFragment();
+                                                selectedFragment = new FoodFragment();
 
                                                 break;
                                         case R.id.nav_training:

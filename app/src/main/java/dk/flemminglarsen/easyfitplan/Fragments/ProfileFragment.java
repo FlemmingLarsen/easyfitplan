@@ -142,7 +142,6 @@ public class ProfileFragment extends Fragment {
     usersRef.addListenerForSingleValueEvent(valueEventListener);
 
 
-        //ToDo: Implement users ability to edit database information
 
         return view;
 

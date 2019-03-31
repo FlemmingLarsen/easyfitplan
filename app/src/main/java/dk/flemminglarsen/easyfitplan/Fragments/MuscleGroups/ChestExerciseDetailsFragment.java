@@ -40,13 +40,14 @@ public class ChestExerciseDetailsFragment extends Fragment {
         textView = view.findViewById(R.id.textView2);
         btnAdd = view.findViewById(R.id.btnAdd);
 
+        //Get bundle and attack values to .xml
         final Bundle bundle = getArguments();
         if(bundle != null){
             mToolbar.setTitle(bundle.getString("chestExerciseNames"));
             mImageView.setImageResource(bundle.getInt("chestExerciseGifs"));
             textView.setText(bundle.getString("chestExerciseDescription"));
-            mDatabaseHelper = new DatabaseHelper(getActivity());
 
+            mDatabaseHelper = new DatabaseHelper(getActivity());
 
         }
 
@@ -60,10 +61,10 @@ public class ChestExerciseDetailsFragment extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem weekDay) {
 
-                        /*exerciseName = bundle.getString("chestExerciseNames");*/
                         weekDays = weekDay.getTitle().toString();
                         newEntry = bundle.getString("chestExerciseNames");
 
+                        //Check if that specific exercise is already on that specific day
                         if(newEntry != null) {
                             Boolean check = mDatabaseHelper.checkExists(newEntry, weekDays);
                                 if(check == true ){
@@ -85,7 +86,7 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
         return view;
     }
-
+        //Add data to SQLite with name of exercise and day of the week if it's not present
         public void AddData(String newEntry, String weekDays){
             boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
 

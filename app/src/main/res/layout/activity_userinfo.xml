@@ -44,7 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <!-- TODO: Handle male/female int for selections  -->
     <RadioGroup
         android:layout_marginTop="5dp"
         android:id="@+id/radioGrp"
@@ -100,7 +99,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- TODO: Spinner String needs to be handled for each selection -->
     <Spinner
         android:id="@+id/spinner"
         android:entries="@array/activityLevel"

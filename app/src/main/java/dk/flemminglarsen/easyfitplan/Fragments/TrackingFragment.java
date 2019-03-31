@@ -39,13 +39,13 @@ public class TrackingFragment extends Fragment {
         recyclerView = view.findViewById(R.id.rv);
         searchView = view.findViewById(R.id.searchFood);
 
-
         return view;
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
         if(databaseReference != null){
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -57,6 +57,7 @@ public class TrackingFragment extends Fragment {
                         }
                         FoodAdapter adapter = new FoodAdapter(list);
                         recyclerView.setAdapter(adapter);
+
                     }
                 }
 

@@ -1,16 +1,15 @@
 package dk.flemminglarsen.easyfitplan.Helperclasses;
 
-public class FoodActivity {
+public class TrackingActivity {
+    static String name;
+    static String carbohydrates;
+    static String fats;
+    static String protein;
 
-     String name;
-     String carbohydrates;
-     String fats;
-     String protein;
-
-    public FoodActivity() {
+    public TrackingActivity() {
     }
 
-    public FoodActivity(String name, String carbohydrates, String fats, String protein) {
+    public TrackingActivity(String name, String carbohydrates, String fats, String protein) {
         this.name = name;
         this.carbohydrates = carbohydrates;
         this.fats = fats;
@@ -49,3 +48,4 @@ public class FoodActivity {
         this.protein = protein;
     }
 }
+

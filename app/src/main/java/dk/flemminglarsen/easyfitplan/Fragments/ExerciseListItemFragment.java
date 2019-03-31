@@ -1,4 +1,4 @@
-package dk.flemminglarsen.easyfitplan.Fragments.Weekdays;
+package dk.flemminglarsen.easyfitplan.Fragments;
 
 
 import android.database.sqlite.SQLiteDatabase;
