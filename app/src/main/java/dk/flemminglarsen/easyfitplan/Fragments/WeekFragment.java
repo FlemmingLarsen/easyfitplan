@@ -28,7 +28,7 @@ public class WeekFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_monday, container, false);
+        View view = inflater.inflate(R.layout.fragment_training_day, container, false);
 
         mListView = view.findViewById(R.id.listview);
         mDatabaseHelper = new DatabaseHelper(getActivity());
@@ -52,9 +52,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getMonday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -62,9 +62,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getTuesday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -72,9 +72,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getWednesday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -82,9 +82,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getThursday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -92,9 +92,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getFriday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -102,9 +102,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getSaturday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
@@ -112,9 +112,9 @@ public class WeekFragment extends Fragment {
             Cursor cursor = mDatabaseHelper.getSunday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
-                listData.add(cursor.getString(1));
+                listData.add(cursor.getString(2));
             }
-            //Create the list adapter and set the it
+            //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
         }

@@ -27,7 +27,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
 
     String foods, carbo, protein, fats;
     ArrayList<FoodActivity> list;
-    FoodDatabaseHelper mDatabaseHelper;
     Context context;
 
     public FoodAdapter(Context context, ArrayList<FoodActivity> list) {
@@ -57,7 +56,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         holder.fats.setText(list.get(position).getFats());
 
         //Bind data to views
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -73,7 +72,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).commit();
 
             }
-        });
+        });*/
     }
     
     @Override

@@ -41,7 +41,8 @@
 
     <!-- Assorted Strings -->
     <string name="delete_exercise">Delete Exercise</string>
-    <string name="mondayOverview">An overview of Mondays exercises</string>
+    <string name="Overview">Your selected exercises for this day is</string>
+    <string name="Delete">To remove an exercise, swipe left or right</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -56,7 +56,8 @@ public class FoodFragment extends Fragment {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemList);
         listView.setAdapter(adapter);
         getInfo();
-
+        itemList.add(foods);
+        adapter.notifyDataSetChanged();
 
         addFood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +72,7 @@ public class FoodFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(foods != null) {
-                    itemList.add(foods);
-                    adapter.notifyDataSetChanged();
+
                 }
             }
         });
