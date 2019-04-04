@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.FoodDetailFragment">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:hint="Foodname"
+        android:id="@+id/foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/protein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/foodName"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:hint="protein"/>
+
+    <TextView
+        android:id="@+id/carbo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/protein"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:hint="carbo"/>
+
+    <TextView
+        android:id="@+id/fats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carbo"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:hint="fats"/>
+
+    <Button
+        android:id="@+id/addFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fats"
+        android:text="Add Food"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

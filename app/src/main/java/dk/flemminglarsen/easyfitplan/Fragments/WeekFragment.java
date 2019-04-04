@@ -38,7 +38,7 @@ public class WeekFragment extends Fragment {
         return view;
     }
 
-    //Get data from column 1 and add it to the listview
+    //Get data from column 2 and add it to the listview
     private void populateListView() {
 
         //If bundle is not empty, get "day" from Trainingfragment
@@ -47,7 +47,7 @@ public class WeekFragment extends Fragment {
             day = bundle.getString("day");
         }
 
-        //Get the exercises from the specific days and show them
+        //Get the exercises from the specific days from DatabaseHelper and show them
         if (day == "monday") {
             Cursor cursor = mDatabaseHelper.getMonday();
             ArrayList<String> listData = new ArrayList<>();
@@ -120,38 +120,37 @@ public class WeekFragment extends Fragment {
         }
 
 
-            //OnClick for the ExerciseListItem
-            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String name = parent.getItemAtPosition(position).toString();
-                    Toast.makeText(getActivity(), "You clicked on " + name, Toast.LENGTH_SHORT).show();
+        //OnClick for the ExerciseListItem
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    //Get ID associated with name
-                    Cursor data = mDatabaseHelper.getItemID(name);
-                    int itemID = -1;
-                    while (data.moveToNext()) {
-                        itemID = data.getInt(0);
-                    }
-                    //If there is such an ID display it
-                    if (itemID > -1) {
-                        Toast.makeText(getActivity(), "The ID is: " + itemID, Toast.LENGTH_SHORT).show();
-                        Fragment fragment = new ExerciseListItemFragment();
-                        Bundle bundle = new Bundle();
-                        bundle.putInt("id", itemID);
-                        bundle.putString("name", name);
-                        fragment.setArguments(bundle);
-                        FragmentManager fragmentManager = getFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+                String name = parent.getItemAtPosition(position).toString();
 
-                    } else {
-                        Toast.makeText(getActivity(), "No ID with that name", Toast.LENGTH_SHORT).show();
-                    }
-
+                //Get ID associated with name
+                Cursor data = mDatabaseHelper.getItemID(name);
+                int itemID = -1;
+                while (data.moveToNext()) {
+                    itemID = data.getInt(0);
                 }
-            });
+                //If there is such an ID display it
+                if (itemID > -1) {
+                    Fragment fragment = new ExerciseListItemFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("id", itemID);
+                    bundle.putString("name", name);
+                    fragment.setArguments(bundle);
+                    FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
 
-        }
+                } else {
+                    Toast.makeText(getActivity(), "No ID with that name", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
     }
+
+}
 

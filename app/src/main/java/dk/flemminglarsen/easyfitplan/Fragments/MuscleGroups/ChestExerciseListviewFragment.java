@@ -49,6 +49,7 @@ public class ChestExerciseListviewFragment extends Fragment {
           ListviewAdapterExercises mAdapter = new ListviewAdapterExercises(getActivity(), chestExerciseNames, chestExerciseGifs, chestExerciseDescription);
           mListView.setAdapter(mAdapter);
 
+          //OnItemClick for the listview items
           mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
@@ -56,6 +57,7 @@ public class ChestExerciseListviewFragment extends Fragment {
                   ChestExerciseDetailsFragment frt = new ChestExerciseDetailsFragment();
                   FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
+                  //Send the relevant data to the ChestExerciseDetailsFragment
                   Bundle bundle = new Bundle();
                   bundle.putString("chestExerciseNames", chestExerciseNames[i]);
                   bundle.putInt("chestExerciseGifs", chestExerciseGifs[i]);

@@ -23,7 +23,7 @@ import dk.flemminglarsen.easyfitplan.Helperclasses.FoodActivity;
 import dk.flemminglarsen.easyfitplan.Helperclasses.FoodAdapter;
 import dk.flemminglarsen.easyfitplan.R;
 
-public class TrackingFragment extends Fragment {
+public class TrackingFragment extends Fragment{
 
     DatabaseReference databaseReference;
     ArrayList<FoodActivity> list;
@@ -46,6 +46,7 @@ public class TrackingFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        //If database reference is not empty, get snapshot from database and add the values to ArrayList
         if(databaseReference != null){
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -67,6 +68,7 @@ public class TrackingFragment extends Fragment {
                 }
             });
         }
+        //If searchView is not empty, listen for callbacks for changes to the query text
         if(searchView != null){
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
@@ -81,8 +83,11 @@ public class TrackingFragment extends Fragment {
                 }
             });
         }
+
     }
 
+
+    //If an object in the ArrayList contains the letter(s) as in the searchView, add that item to a new arrayList
     private void search(String str){
         ArrayList<FoodActivity> searchList = new ArrayList<>();
         for(FoodActivity object : list){

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +24,6 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
     ImageView mImageView;
     TextView textView;
     Button btnAdd;
-    String exerciseName;
     String weekDays;
     String newEntry;
 
@@ -35,9 +35,11 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
 
         mToolbar = view.findViewById(R.id.toolbar2);
         mImageView = view.findViewById(R.id.imageView2);
-        textView = view.findViewById(R.id.textView2);
+        textView = view.findViewById(R.id.textView);
+        textView.setMovementMethod(new ScrollingMovementMethod());
         btnAdd = view.findViewById(R.id.btnAdd);
 
+        //Get bundle and attach values to .xml
         final Bundle bundle = getArguments();
         if(bundle != null){
             mToolbar.setTitle(bundle.getString("shoulderExerciseNames"));
@@ -58,10 +60,10 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem weekDay) {
 
-                        /*exerciseName = bundle.getString("chestExerciseNames");*/
                         weekDays = weekDay.getTitle().toString();
                         newEntry = bundle.getString("shoulderExerciseNames");
 
+                        //Check if that specific exercise is already on that specific day
                         if(newEntry != null) {
                             Boolean check = mDatabaseHelper.checkExists(newEntry, weekDays);
                             if(check == true ){
@@ -83,15 +85,16 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
         return view;
     }
 
-        public void AddData(String newEntry, String weekDays){
-            boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
+    //Add data to SQLite with name of exercise and day of the week if it's not present
+    public void AddData(String newEntry, String weekDays){
+        boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
 
-            if(insertData == true) {
-                Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
-            }
+        if(insertData == true) {
+            Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
         }
+    }
 
 }
 

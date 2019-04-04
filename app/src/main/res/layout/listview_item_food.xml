@@ -20,6 +20,7 @@
             android:textStyle="bold"
             android:padding="10dp"/>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/lower"
         android:paddingTop="50dp"
@@ -31,19 +32,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="sample"/>
+            android:text="@string/carbs"/>
         <TextView
             android:id="@+id/protein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="sample"/>
+            android:text="@string/protein"/>
         <TextView
             android:id="@+id/fats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="sample"/>
+            android:text="@string/fats"/>
         </LinearLayout>
     <View
         android:layout_width="match_parent"

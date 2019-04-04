@@ -1,6 +1,8 @@
 package dk.flemminglarsen.easyfitplan.Helperclasses;
 
 
+import android.content.res.Resources;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +19,7 @@ import com.firebase.client.core.Context;
 import java.util.ArrayList;
 
 import dk.flemminglarsen.easyfitplan.Activities.MenuActivity;
+import dk.flemminglarsen.easyfitplan.Fragments.FoodDetailFragment;
 import dk.flemminglarsen.easyfitplan.Fragments.FoodFragment;
 import dk.flemminglarsen.easyfitplan.Fragments.TrackingFragment;
 import dk.flemminglarsen.easyfitplan.R;
@@ -28,6 +31,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     String foods, carbo, protein, fats;
     ArrayList<FoodActivity> list;
     Context context;
+    FoodDatabaseHelper mFoodDatabaseHelper;
+
 
     public FoodAdapter(Context context, ArrayList<FoodActivity> list) {
         this.list = list;
@@ -50,29 +55,38 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+
         holder.foods.setText(list.get(position).getName());
         holder.carbo.setText(list.get(position).getCarbohydrates());
         holder.protein.setText(list.get(position).getProtein());
         holder.fats.setText(list.get(position).getFats());
 
-        //Bind data to views
-       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+
+        //Onclick for the TrackingFragment recyclerview from SQLite database
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //Get data
                 foods = list.get(position).getName();
                 carbo = list.get(position).getCarbohydrates();
                 protein = list.get(position).getProtein();
                 fats = list.get(position).getFats();
 
-                setInfo();
-
+                //Send data to FoodDetailFragment
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                Fragment myFragment = new FoodFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).commit();
+                Fragment fragment = new FoodDetailFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("foods", foods);
+                bundle.putString("carbo", carbo);
+                bundle.putString("protein", protein);
+                bundle.putString("fats", fats);
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
 
             }
-        });*/
+        });
     }
     
     @Override
@@ -90,15 +104,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
             fats = itemView.findViewById(R.id.fats);
             foods = itemView.findViewById(R.id.food);
         }
-    }
-
-    public void setInfo(){
-
-        TrackingActivity trackingActivity = new TrackingActivity();
-        trackingActivity.setName(foods);
-        trackingActivity.setCarbohydrates(carbo);
-        trackingActivity.setProtein(protein);
-        trackingActivity.setFats(fats);
     }
 }
 

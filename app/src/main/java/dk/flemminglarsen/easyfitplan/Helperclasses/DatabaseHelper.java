@@ -24,6 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, TABLE_NAME, null, 1);
     }
 
+    //Create SLQ database called "exercises" and three columns, ID, day and name
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + "("
@@ -31,12 +32,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(createTable);
     }
 
+    //For testing purpose Drop the table if it exists and recreate it.
+    //This will change once the final database structure has been decided
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP IF TABLE EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
+    //Add data to the database with name and day as columns
     public boolean addData(String name, String day) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -47,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        //if date as inserted incorrectly it will return -1
+        //if data as inserted incorrectly it will return -1
         if (result == -1) {
             return false;
         } else {
@@ -113,7 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-    //Get mondays from database
+    //Get wednesday from database
     public Cursor getWednesday(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Wednesday" + "'";
@@ -121,14 +125,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    //Get tuesdays from database
+    //Get thursdays from database
     public Cursor getThursday(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Thursday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-    //Get mondays from database
+    //Get friday from database
     public Cursor getFriday(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Friday" + "'";
@@ -136,14 +140,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    //Get tuesdays from database
+    //Get saturday from database
     public Cursor getSaturday(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Saturday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-    //Get mondays from database
+    //Get sunday from database
     public Cursor getSunday(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Sunday" + "'";

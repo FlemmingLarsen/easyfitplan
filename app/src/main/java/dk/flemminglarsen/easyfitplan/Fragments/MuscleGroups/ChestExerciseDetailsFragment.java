@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,6 @@ public class ChestExerciseDetailsFragment extends Fragment {
     ImageView mImageView;
     TextView textView;
     Button btnAdd;
-    String exerciseName;
     String weekDays;
     String newEntry;
 
@@ -37,10 +37,11 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
         mToolbar = view.findViewById(R.id.toolbar2);
         mImageView = view.findViewById(R.id.imageView2);
-        textView = view.findViewById(R.id.textView2);
+        textView = view.findViewById(R.id.textView);
+        textView.setMovementMethod(new ScrollingMovementMethod());
         btnAdd = view.findViewById(R.id.btnAdd);
 
-        //Get bundle and attack values to .xml
+        //Get bundle and attach values to .xml
         final Bundle bundle = getArguments();
         if(bundle != null){
             mToolbar.setTitle(bundle.getString("chestExerciseNames"));

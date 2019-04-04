@@ -15,6 +15,9 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "foods";
     private static final String COL0 = "ID";
     private static final String COL1 = "name";
+    private static final String COL2 = "proteins";
+    private static final String COL3 = "fats";
+    private static final String COL4 = "carbohydrate";
 
 
     public FoodDatabaseHelper(Context context) {
@@ -24,7 +27,7 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + "("
-                + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL0 + " TEXT," + COL1 + " TEXT" + ");";
+                + COL0 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL1 + " TEXT," + COL2 + " TEXT," + COL3 + " TEXT," + COL4 + " TEXT" + ");";
         db.execSQL(createTable);
     }
 
@@ -34,13 +37,15 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item, String food) {
+    public boolean addData(String food, String proteins, String fats, String carbohydrates) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL1, item);
-        contentValues.put(COL0, food);
+        contentValues.put(COL1, food);
+        contentValues.put(COL2, proteins);
+        contentValues.put(COL3, fats);
+        contentValues.put(COL4, carbohydrates);
 
-        Log.d(TAG, "addData: Adding " + item + "and " + food + " to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + food + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -61,38 +66,26 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-
     //Returns only the ID that matches the name passed in
-    public Cursor getItemID(String name){
+    public Cursor getItemID(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL0 + " FROM " + TABLE_NAME +
-                " WHERE " + COL0 + " = '" + name + "'";
+                " WHERE " + COL0 + " = '" + id + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
 
-    //Delete from database
-    public void deleteName(int id, String name){
+    //Delete food from database
+    public void deleteName(int id, String food){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL0 + " = '" + id + "'" +
-                " AND " + COL1 + " = '" + name + "'";
+                " AND " + COL1 + " = '" + food + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + name + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + food + " from database.");
         db.execSQL(query);
     }
 
-    //Check if exercise already exists on the chosen day
-    public boolean checkExists(String newEntry, String foods){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 +  "= '" + newEntry + "' AND " + COL1 + "= '"+ foods +"' "  ;
-        Cursor data = db.rawQuery(query, null);
-        if(data.getCount() > 0){
-            return false;
-        }else{
-            return true;
-        }
-    }
 
    /* //Get mondays from database
     public Cursor getMonday(){

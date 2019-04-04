@@ -50,7 +50,7 @@ public class MenuActivity extends AppCompatActivity {
 
                                                 break;
                                         case R.id.nav_tracking:
-                                                selectedFragment = new TrackingFragment();
+                                                selectedFragment = new FoodFragment();
 
                                                 break;
                                         case R.id.nav_training:

@@ -20,7 +20,7 @@
     <!-- Strings related to Userprofile -->
     <string name="hello_user">Welcome %1$s!</string>
     <string name="information">From the information you just provided, the following calculations have been made:</string>
-    <string name="metabolic_rate">Your BMR (Basic Metablic Rate) is %1$s kcal. That means that you burn that many calories every day, just by sitting down and keeping your organs fully functional!</string>
+    <string name="metabolic_rate">Your BMR (Basal Metabolic Rate) is %1$s kcal. That means that you burn that many calories every day, just by sitting down and keeping your organs fully functional!</string>
     <string name="energy_expenditure">Your TDEE (Total Daily Energy Expenditure) is %1$s kcal. That is a daily average and includes all the activities you do on a weekly basis. Go you!</string>
 
     <string name="calorie_count">To maintain a healthy body, it is important not to give it too much or too little to work with. It is recommended that you stay within these limits.</string>
@@ -44,5 +44,10 @@
     <string name="Overview">Your selected exercises for this day is</string>
     <string name="Delete">To remove an exercise, swipe left or right</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Strings related to foodItemListview-->
+    <string name="carbs">carbs %1$s!</string>
+    <string name="protein">protein %1$s!</string>
+    <string name="fats">fats %1$s!</string>
 
 </resources>

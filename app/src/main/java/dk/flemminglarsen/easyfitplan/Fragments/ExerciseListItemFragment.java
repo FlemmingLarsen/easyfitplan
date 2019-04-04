@@ -1,14 +1,12 @@
 package dk.flemminglarsen.easyfitplan.Fragments;
 
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +19,7 @@ public class ExerciseListItemFragment extends Fragment {
     private static final String TAG = "EditDataActivity";
 
     private Button btnDelete;
-    private TextView editable_item;
+    private TextView exercisename;
     DatabaseHelper mDatabaseHelper;
     private String selectedName;
     private Integer selectedID;
@@ -32,14 +30,14 @@ public class ExerciseListItemFragment extends Fragment {
 
         btnDelete = view.findViewById(R.id.btnDelete);
         mDatabaseHelper = new DatabaseHelper(getActivity());
-        editable_item = view.findViewById(R.id.exerciseName);
+        exercisename = view.findViewById(R.id.exerciseName);
 
         //If bundle is not empty, get data
         final Bundle bundle = getArguments();
         if (bundle != null) {
             selectedID = bundle.getInt("id", -1);
             selectedName = bundle.getString("name");
-            editable_item.setText(selectedName);
+            exercisename.setText(selectedName);
         }
 
         //Delete exercise from database
@@ -47,7 +45,7 @@ public class ExerciseListItemFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mDatabaseHelper.deleteName(selectedID, selectedName);
-                editable_item.setText("");
+                exercisename.setText("");
                 Toast.makeText(getActivity(), "Exercise deleted", Toast.LENGTH_SHORT).show();
             }
         });

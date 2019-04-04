@@ -135,14 +135,13 @@
         android:layout_below="@id/editTextPassword"/>
 
     <Button
-        android:paddingTop="10dp"
         android:id="@+id/buttonSignUp"
         android:text="Sign Up"
         android:background="@color/transparent"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName"
+        android:layout_below="@id/editTextPassword"
         />
 
     <TextView

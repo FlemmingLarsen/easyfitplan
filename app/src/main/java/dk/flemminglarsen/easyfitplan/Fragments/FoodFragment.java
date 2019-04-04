@@ -26,6 +26,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import dk.flemminglarsen.easyfitplan.Helperclasses.FoodActivity;
+import dk.flemminglarsen.easyfitplan.Helperclasses.FoodAdapter;
 import dk.flemminglarsen.easyfitplan.Helperclasses.TrackingActivity;
 import dk.flemminglarsen.easyfitplan.R;
 
@@ -40,6 +41,7 @@ public class FoodFragment extends Fragment {
     ArrayList<String> itemList;
     ArrayAdapter<String> adapter;
     Button test;
+    Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,11 +55,13 @@ public class FoodFragment extends Fragment {
         if(itemList == null){
             itemList = new ArrayList<>();
         }
+
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemList);
         listView.setAdapter(adapter);
-        getInfo();
-        itemList.add(foods);
-        adapter.notifyDataSetChanged();
+        if(foods != null) {
+            itemList.add(foods);
+            adapter.notifyDataSetChanged();
+        }
 
         addFood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,31 +72,6 @@ public class FoodFragment extends Fragment {
             }
         });
 
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(foods != null) {
-
-                }
-            }
-        });
-        return view;
-    }
-
-    public void getInfo(){
-        TrackingActivity trackingActivity = new TrackingActivity();
-        foods = trackingActivity.getName();
-        carbo = trackingActivity.getCarbohydrates();
-        protein = trackingActivity.getProtein();
-        fats = trackingActivity.getFats();
-
-    }
-
-    public void saveInfo(){
-
-    }
-
-    public void loadInfo(){
-
+         return view;
     }
 }

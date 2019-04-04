@@ -67,7 +67,7 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
             @Override
             public void onClick(View v) {
 
-                //Radiobuttons genders
+                //Radiobutton genders
                 selectValueId = radioGroup.getCheckedRadioButtonId();
                 if(selectValueId == radioButton.getId()){
                     gender = "Male";
@@ -78,14 +78,11 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
                 //Spinner activity level
                 activity = spinner.getSelectedItem().toString();
 
-
                 //Call
                 updateDatabase();
 
             }
         });
-
-
     }
 
     //Update user info i realtime database
@@ -138,16 +135,17 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
         }
     }
 
+    //Get selected value of the spinner and show as Toast to user
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String activityLevel = parent.getItemAtPosition(position).toString().trim();
         Toast.makeText(parent.getContext(), activityLevel, Toast.LENGTH_SHORT).show();
     }
 
+    //Not used
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
  }
 

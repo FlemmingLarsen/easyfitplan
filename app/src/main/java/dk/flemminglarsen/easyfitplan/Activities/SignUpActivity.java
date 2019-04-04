@@ -34,13 +34,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         editTextPassword = findViewById(R.id.editTextPassword);
         progressBar = findViewById(R.id.progressbar);
 
+        //Get instance of Firebase Authenticator
         mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.buttonSignUp).setOnClickListener(this);
         findViewById(R.id.textViewLogin).setOnClickListener(this);
     }
 
-    //error messages
+    //Check for conditions before creating user
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -94,6 +95,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    // Switch between register user or go back to Login
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

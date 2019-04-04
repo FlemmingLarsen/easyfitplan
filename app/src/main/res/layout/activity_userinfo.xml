@@ -83,9 +83,10 @@
 
     <Button
         android:id="@+id/profileUpdate"
-        android:text="Thanks!"
+        android:text="Update Profile"
         android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -94,7 +95,7 @@
         android:layout_marginTop="11dp"
         android:layout_below="@id/radioGrp"
         android:id="@+id/activityLevel"
-        android:hint="Activity:"
+        android:text="Activity:"
         android:textSize="18dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
