@@ -47,7 +47,7 @@ public class ChestExerciseListviewFragment extends Fragment {
           mToolbar.setTitle(getResources().getString(R.string.chestExercises));
 
           ListviewAdapterExercises mAdapter = new ListviewAdapterExercises(getActivity(), chestExerciseNames, chestExerciseGifs, chestExerciseDescription);
-          mListView.setAdapter(mAdapter);
+        mListView.setAdapter(mAdapter);
 
           //OnItemClick for the listview items
           mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

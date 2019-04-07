@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ import dk.flemminglarsen.easyfitplan.Helperclasses.FoodActivity;
 import dk.flemminglarsen.easyfitplan.Helperclasses.FoodAdapter;
 import dk.flemminglarsen.easyfitplan.R;
 
-public class TrackingFragment extends Fragment{
+public class TrackingFragment extends Fragment {
 
     DatabaseReference databaseReference;
     ArrayList<FoodActivity> list;
@@ -98,4 +99,6 @@ public class TrackingFragment extends Fragment{
         FoodAdapter foodAdapter = new FoodAdapter(searchList);
         recyclerView.setAdapter(foodAdapter);
     }
+
+
 }

@@ -1,47 +1,33 @@
 package dk.flemminglarsen.easyfitplan.Fragments;
 
-
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-import java.lang.reflect.Type;
+import android.widget.SimpleAdapter;
 import java.util.ArrayList;
-
-import dk.flemminglarsen.easyfitplan.Helperclasses.FoodActivity;
-import dk.flemminglarsen.easyfitplan.Helperclasses.FoodAdapter;
-import dk.flemminglarsen.easyfitplan.Helperclasses.TrackingActivity;
+import java.util.HashMap;
+import dk.flemminglarsen.easyfitplan.Helperclasses.FoodDatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
-import static android.content.Context.MODE_PRIVATE;
 
 
 public class FoodFragment extends Fragment {
 
+    String food, proteins, fats, carbohydrates;
     ImageButton addFood;
-    String foods, carbo, protein, fats;
+    FoodDatabaseHelper foodDatabaseHelper;
     ListView listView;
-    ArrayList<String> itemList;
-    ArrayAdapter<String> adapter;
-    Button test;
-    Context context;
+    SQLiteDatabase sqLiteDatabase;
+    ArrayList<HashMap<String, String>> foodlist;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,29 +35,56 @@ public class FoodFragment extends Fragment {
 
         addFood = view.findViewById(R.id.addFood);
         listView = view.findViewById(R.id.caloriesEaten);
-        test = view.findViewById(R.id.test);
+        foodDatabaseHelper = new FoodDatabaseHelper(getActivity());
+        sqLiteDatabase = foodDatabaseHelper.getWritableDatabase();
 
-
-        if(itemList == null){
-            itemList = new ArrayList<>();
-        }
-
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemList);
-        listView.setAdapter(adapter);
-        if(foods != null) {
-            itemList.add(foods);
-            adapter.notifyDataSetChanged();
-        }
 
         addFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new TrackingFragment());
-                fr.addToBackStack(null).commit();
+                TrackingFragment frt = new TrackingFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, frt);
+                transaction.addToBackStack(null).commit();
             }
         });
 
-         return view;
+        foodlist = new ArrayList<>();
+        populateListview();
+
+        return view;
+    }
+
+    private void populateListview() {
+
+        //Get database reference, if it's not empty, get values from every item
+        Cursor cursor = foodDatabaseHelper.getData();
+        foodlist.clear();
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for (int i = 0; i < cursor.getCount(); i++) {
+                food = cursor.getString(1);
+                proteins = cursor.getString(2);
+                fats = cursor.getString(3);
+                carbohydrates = cursor.getString(4);
+
+                //Put values into a Hashmap store it in an ArrayList
+                HashMap<String, String> foods = new HashMap<>();
+                foods.put("foods", food);
+                foods.put("proteins", proteins);
+                foods.put("fats", fats);
+                foods.put("carbohydrates", carbohydrates);
+                foodlist.add(foods);
+                cursor.moveToNext();
+
+            }
+            //user adapter to put values into the UI
+            ListAdapter adapter = new SimpleAdapter(getActivity(), foodlist, R.layout.fragment_food_items, new String[]{"foods", "proteins", "fats", "carbohydrates"}, new int[]{R.id.food, R.id.proteins, R.id.fats, R.id.carbs});
+            listView.setAdapter(adapter);
+        }
     }
 }
+
+
+
+

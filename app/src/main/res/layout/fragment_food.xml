@@ -16,7 +16,7 @@
 
     <TextView
         android:id="@+id/foodText"
-        android:text="You have easten X calories today!"
+        android:text="You have eaten X calories today!"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_width="wrap_content"

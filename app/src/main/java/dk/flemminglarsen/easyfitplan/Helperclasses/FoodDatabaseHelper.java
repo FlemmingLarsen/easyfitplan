@@ -11,13 +11,14 @@ import android.util.Log;
 
 public class FoodDatabaseHelper extends SQLiteOpenHelper {
 
+
     private static final String TAG = "DatabaseHelper";
     private static final String TABLE_NAME = "foods";
-    private static final String COL0 = "ID";
-    private static final String COL1 = "name";
-    private static final String COL2 = "proteins";
-    private static final String COL3 = "fats";
-    private static final String COL4 = "carbohydrate";
+    public static final String COL0 = "ID";
+    public static final String COL1 = "name";
+    public static final String COL2 = "proteins";
+    public static final String COL3 = "fats";
+    public static final String COL4 = "carbohydrate";
 
 
     public FoodDatabaseHelper(Context context) {
@@ -66,11 +67,18 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor getFood(String food){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + food + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
     //Returns only the ID that matches the name passed in
-    public Cursor getItemID(String id){
+    public Cursor getItemID(String food){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL0 + " FROM " + TABLE_NAME +
-                " WHERE " + COL0 + " = '" + id + "'";
+                " WHERE " + COL1 + " = '" + food + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

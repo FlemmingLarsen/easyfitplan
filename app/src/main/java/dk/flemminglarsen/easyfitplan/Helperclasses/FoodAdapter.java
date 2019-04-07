@@ -68,13 +68,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
 
-                //Get data
                 foods = list.get(position).getName();
                 carbo = list.get(position).getCarbohydrates();
                 protein = list.get(position).getProtein();
                 fats = list.get(position).getFats();
 
-                //Send data to FoodDetailFragment
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 Fragment fragment = new FoodDetailFragment();
                 Bundle bundle = new Bundle();
@@ -105,5 +103,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
             foods = itemView.findViewById(R.id.food);
         }
     }
+
+   /* public void getInfo(){
+        TrackingActivity trackingActivity = new TrackingActivity();
+        foods = trackingActivity.getName();
+        carbo = trackingActivity.getCarbohydrates();
+        protein = trackingActivity.getProtein();
+        fats = trackingActivity.getFats();
+
+
+    }*/
+
 }
 

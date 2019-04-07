@@ -1,6 +1,6 @@
 package dk.flemminglarsen.easyfitplan.Helperclasses;
 
-public class FoodActivity {
+public class FoodActivity extends FoodItems {
 
      String name;
      String carbohydrates;
