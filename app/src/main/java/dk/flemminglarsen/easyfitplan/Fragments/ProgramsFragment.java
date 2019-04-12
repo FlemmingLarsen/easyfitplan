@@ -19,8 +19,8 @@ public class ProgramsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_programs, container, false);
 
-        Button btnTraining = (Button)view.findViewById(R.id.buttonTraining);
-        Button btnExercises = (Button)view.findViewById(R.id.buttonExercises);
+        Button btnTraining = view.findViewById(R.id.buttonTraining);
+        Button btnExercises = view.findViewById(R.id.buttonExercises);
 
 
         // Training and Excercise buttons to fragments

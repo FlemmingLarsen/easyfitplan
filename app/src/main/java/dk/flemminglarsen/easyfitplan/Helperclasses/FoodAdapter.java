@@ -31,7 +31,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     String foods, carbo, protein, fats;
     ArrayList<FoodActivity> list;
     Context context;
-    FoodDatabaseHelper mFoodDatabaseHelper;
 
 
     public FoodAdapter(Context context, ArrayList<FoodActivity> list) {
@@ -60,8 +59,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         holder.carbo.setText(list.get(position).getCarbohydrates());
         holder.protein.setText(list.get(position).getProtein());
         holder.fats.setText(list.get(position).getFats());
-
-
 
         //Onclick for the TrackingFragment recyclerview from SQLite database
         holder.itemView.setOnClickListener(new View.OnClickListener() {

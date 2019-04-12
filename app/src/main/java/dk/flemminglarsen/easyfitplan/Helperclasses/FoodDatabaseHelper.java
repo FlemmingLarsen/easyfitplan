@@ -13,8 +13,8 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
 
 
     private static final String TAG = "DatabaseHelper";
-    private static final String TABLE_NAME = "foods";
-    public static final String COL0 = "ID";
+    private static final String TABLE_NAME = "food";
+    public static final String COL0 = "id";
     public static final String COL1 = "name";
     public static final String COL2 = "proteins";
     public static final String COL3 = "fats";
@@ -38,9 +38,10 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String food, String proteins, String fats, String carbohydrates) {
+    public boolean addData(String id, String food, String proteins, String fats, String carbohydrates) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(COL0, id);
         contentValues.put(COL1, food);
         contentValues.put(COL2, proteins);
         contentValues.put(COL3, fats);
@@ -67,7 +68,7 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    public Cursor getFood(String food){
+/*    public Cursor getFood(String food){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + food + "'";
         Cursor data = db.rawQuery(query, null);
@@ -77,74 +78,17 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
     //Returns only the ID that matches the name passed in
     public Cursor getItemID(String food){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + COL0 + " FROM " + TABLE_NAME +
-                " WHERE " + COL1 + " = '" + food + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
-    //Delete food from database
-    public void deleteName(int id, String food){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL0 + " = '" + id + "'" +
-                " AND " + COL1 + " = '" + food + "'";
-        Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + food + " from database.");
-        db.execSQL(query);
-    }
-
-
-   /* //Get mondays from database
-    public Cursor getMonday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Monday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
-    //Get tuesdays from database
-    public Cursor getTuesday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Tuesday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-    //Get mondays from database
-    public Cursor getWednesday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Wednesday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
-    //Get tuesdays from database
-    public Cursor getThursday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Thursday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-    //Get mondays from database
-    public Cursor getFriday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Friday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
-    //Get tuesdays from database
-    public Cursor getSaturday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Saturday" + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-    //Get mondays from database
-    public Cursor getSunday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Sunday" + "'";
+        String query = "SELECT " + COL0 + " FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + food + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }*/
+
+    //Delete food from database
+    public void deleteItem(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
+                + COL0 + " = '" + id + "'";
+        Log.d(TAG, "deleteItem: query: " + query);
+        db.execSQL(query);
+    }
 }

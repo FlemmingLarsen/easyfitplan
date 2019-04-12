@@ -15,7 +15,7 @@ import dk.flemminglarsen.easyfitplan.R;
 
 public class FoodDetailFragment extends Fragment {
 
-    String food, proteins, fats, carbohydrates;
+    String id, food, proteins, fats, carbohydrates;
     TextView foodText, proteinText, carboText, fatsText;
     Button addFood;
     FoodDatabaseHelper mFoodDatabaseHelper;
@@ -39,6 +39,7 @@ public class FoodDetailFragment extends Fragment {
             fatsText.setText(bundle.getString("fats"));
 
             //Set string to values
+            id = (bundle.getString("id"));
             food = (bundle.getString("foods"));
             proteins = (bundle.getString("protein"));
             fats = (bundle.getString("carbo"));
@@ -50,7 +51,7 @@ public class FoodDetailFragment extends Fragment {
         addFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddData(food, proteins, fats, carbohydrates);
+                AddData(id, food, proteins, fats, carbohydrates);
             }
         });
 
@@ -58,8 +59,8 @@ public class FoodDetailFragment extends Fragment {
     }
 
     //Add data to SQLite
-    public void AddData(String food, String proteins, String fats, String carbohydrates){
-        boolean insertData = mFoodDatabaseHelper.addData(food, proteins, fats, carbohydrates);
+    public void AddData(String id, String food, String proteins, String fats, String carbohydrates){
+        boolean insertData = mFoodDatabaseHelper.addData(id, food, proteins, fats, carbohydrates);
 
         if(insertData == true) {
             Toast.makeText(getActivity(), food + " Added ", Toast.LENGTH_SHORT).show();
