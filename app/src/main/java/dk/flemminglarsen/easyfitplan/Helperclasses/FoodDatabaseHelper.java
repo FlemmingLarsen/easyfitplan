@@ -3,7 +3,6 @@ package dk.flemminglarsen.easyfitplan.Helperclasses;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -12,13 +11,13 @@ import android.util.Log;
 public class FoodDatabaseHelper extends SQLiteOpenHelper {
 
 
-    private static final String TAG = "DatabaseHelper";
-    private static final String TABLE_NAME = "food";
+    public static final String TAG = "DatabaseHelper";
+    public static final String TABLE_NAME = "food";
     public static final String COL0 = "id";
     public static final String COL1 = "name";
     public static final String COL2 = "proteins";
-    public static final String COL3 = "fats";
-    public static final String COL4 = "carbohydrate";
+    public static final String COL3 = "carbohydrate";
+    public static final String COL4 = "fats";
 
 
     public FoodDatabaseHelper(Context context) {
@@ -68,21 +67,6 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-/*    public Cursor getFood(String food){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + food + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
-    //Returns only the ID that matches the name passed in
-    public Cursor getItemID(String food){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + COL0 + " FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + food + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }*/
-
     //Delete food from database
     public void deleteItem(int id){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -90,5 +74,41 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
                 + COL0 + " = '" + id + "'";
         Log.d(TAG, "deleteItem: query: " + query);
         db.execSQL(query);
+    }
+
+
+    //Get sum of all proteins in database
+    public int getProtein(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT SUM(" + FoodDatabaseHelper.COL2 + ") as Total FROM " + FoodDatabaseHelper.TABLE_NAME, null);
+        if (data.moveToFirst()) {
+            int proteinsTotal = data.getInt(data.getColumnIndex("Total"));
+            return proteinsTotal;
+        }
+        return 0;
+    }
+
+    //Get sum of all fats in database
+    public int getFat() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT SUM(" + FoodDatabaseHelper.COL3 + ") as Total FROM " + FoodDatabaseHelper.TABLE_NAME, null);
+        if (data.moveToFirst()) {
+            int fatsTotal = data.getInt(data.getColumnIndex("Total"));
+            return fatsTotal;
+        }
+        return 0;
+
+    }
+
+    //Get sum of all carbohydrates in database
+    public int getcarbs() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT SUM(" + FoodDatabaseHelper.COL4 + ") as Total FROM " + FoodDatabaseHelper.TABLE_NAME, null);
+        if (data.moveToFirst()) {
+            int carbsTotal = data.getInt(data.getColumnIndex("Total"));
+            return carbsTotal;
+        }
+        return 0;
+
     }
 }

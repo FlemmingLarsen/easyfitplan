@@ -1,5 +1,7 @@
 package dk.flemminglarsen.easyfitplan.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -127,6 +129,7 @@ public class ProfileFragment extends Fragment {
     String maintainPlaceholder = getResources().getString(R.string.weight_stay);
     String maintainShow = String.format(maintainPlaceholder, calMain);
     weightStay.setText(maintainShow);
+    saveCalories(calMain);
 
     Double gain = multiplyer + 500;
     String calGain = String.format("%.0f", gain);
@@ -143,11 +146,19 @@ public class ProfileFragment extends Fragment {
 
 
 
+
+
         return view;
 
         }
 
-
+    //Save calories to shared preferences
+    public void saveCalories(String calMain){
+        SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor edt = pref.edit();
+        edt.putString("calories", calMain);
+        edt.apply();
+        }
     }
 
 

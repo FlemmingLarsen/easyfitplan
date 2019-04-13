@@ -19,6 +19,7 @@
         android:width="210dp"
         android:height="50dp"
         android:text="Training"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"/>
 
     <Button
@@ -28,6 +29,7 @@
         android:width="210dp"
         android:height="50dp"
         android:text="Programs"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"/>
     </LinearLayout>
 

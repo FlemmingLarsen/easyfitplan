@@ -49,5 +49,6 @@
     <string name="carbs">carbs %1$s!</string>
     <string name="protein">protein %1$s!</string>
     <string name="fats">fats %1$s!</string>
+    <string name="caloriesEaten">You have eaten %1$s! calories today!</string>
 
 </resources>
