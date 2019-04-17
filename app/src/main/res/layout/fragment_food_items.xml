@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_weight="100">
-
-    <TextView
-        android:id="@+id/food"
-        android:layout_weight="66.6"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:text="text1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardElevation="5dp">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/upper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="33.3">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="sample"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lower"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="50dp">
 
         <TextView
             android:id="@+id/proteins"
-            android:gravity="center"
-            android:text="TextView2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/carbs" />
 
         <TextView
             android:id="@+id/fats"
-            android:gravity="center"
-            android:text="TextView2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/protein" />
 
         <TextView
             android:id="@+id/carbs"
-            android:gravity="center"
-            android:text="TextView2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/fats" />
     </LinearLayout>
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
+
+</android.support.v7.widget.CardView>

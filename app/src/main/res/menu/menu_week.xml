@@ -3,24 +3,24 @@
 
     <item
         android:id="@+id/buttonMonday"
-        android:title="Monday"/>
+        android:title="Monday" />
     <item
         android:id="@+id/buttonTuesday"
-        android:title="Tuesday"/>
+        android:title="Tuesday" />
     <item
         android:id="@+id/buttonWednesday"
-        android:title="Wednesday"/>
+        android:title="Wednesday" />
     <item
         android:id="@+id/buttonThursday"
-        android:title="Thursday"/>
+        android:title="Thursday" />
     <item
         android:id="@+id/buttonFriday"
-        android:title="Friday"/>
+        android:title="Friday" />
     <item
         android:id="@+id/buttonSaturday"
-        android:title="Saturday"/>
+        android:title="Saturday" />
     <item
         android:id="@+id/buttonSunday"
-        android:title="Sunday"/>
+        android:title="Sunday" />
 
 </menu>

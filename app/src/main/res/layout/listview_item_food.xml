@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardElevation="5dp">
 
@@ -11,44 +11,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/food"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="sample"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="10dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lower"
-        android:paddingTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="50dp">
+
         <TextView
             android:id="@+id/carbo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/carbs"/>
+            android:padding="5dp"
+            android:text="@string/carbs" />
+
         <TextView
             android:id="@+id/protein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/protein"/>
+            android:padding="5dp"
+            android:text="@string/protein" />
+
         <TextView
             android:id="@+id/fats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/fats"/>
-        </LinearLayout>
+            android:padding="5dp"
+            android:text="@string/fats" />
+    </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#000"/>
+        android:background="#000" />
 
 </android.support.v7.widget.CardView>

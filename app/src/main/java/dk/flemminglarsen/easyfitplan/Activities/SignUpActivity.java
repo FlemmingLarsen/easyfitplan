@@ -1,9 +1,9 @@
 package dk.flemminglarsen.easyfitplan.Activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -70,6 +70,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
+        if (password.length() > 12) {
+            editTextPassword.setError("Maximum lenght of password should be 12");
+            editTextPassword.requestFocus();
+            return;
+        }
+
         progressBar.setVisibility(View.VISIBLE);
 
         //Create user authentication in Firebase
@@ -88,11 +94,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
                 }
             }
         });
-
     }
 
     // Switch between register user or go back to Login

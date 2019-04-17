@@ -31,7 +31,7 @@ public class FoodDetailFragment extends Fragment {
         addFood = view.findViewById(R.id.addFood);
 
         Bundle bundle = getArguments();
-        if(bundle != null){
+        if (bundle != null) {
             //Set Textviews to values
             foodText.setText(bundle.getString("foods"));
             proteinText.setText(bundle.getString("protein"));
@@ -59,17 +59,14 @@ public class FoodDetailFragment extends Fragment {
     }
 
     //Add data to SQLite
-    public void AddData(String id, String food, String proteins, String fats, String carbohydrates){
+    public void AddData(String id, String food, String proteins, String fats, String carbohydrates) {
         boolean insertData = mFoodDatabaseHelper.addData(id, food, proteins, fats, carbohydrates);
 
-        if(insertData == true) {
+        if (insertData == true) {
             Toast.makeText(getActivity(), food + " Added ", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
         }
         mFoodDatabaseHelper.close();
     }
-
-
-
 }

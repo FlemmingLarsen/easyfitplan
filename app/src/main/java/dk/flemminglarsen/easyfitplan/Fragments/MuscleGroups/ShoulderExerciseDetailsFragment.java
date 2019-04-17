@@ -41,12 +41,11 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
 
         //Get bundle and attach values to .xml
         final Bundle bundle = getArguments();
-        if(bundle != null){
+        if (bundle != null) {
             mToolbar.setTitle(bundle.getString("shoulderExerciseNames"));
             mImageView.setImageResource(bundle.getInt("shoulderExerciseGifs"));
             textView.setText(bundle.getString("shoulderExerciseDescription"));
             mDatabaseHelper = new DatabaseHelper(getActivity());
-
 
         }
 
@@ -64,17 +63,17 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
                         newEntry = bundle.getString("shoulderExerciseNames");
 
                         //Check if that specific exercise is already on that specific day
-                        if(newEntry != null) {
+                        if (newEntry != null) {
                             Boolean check = mDatabaseHelper.checkExists(newEntry, weekDays);
-                            if(check == true ){
+                            if (check == true) {
                                 AddData(newEntry, weekDays);
-                            }else{
+                            } else {
                                 Toast.makeText(getActivity(), newEntry + " is already on " + weekDays, Toast.LENGTH_SHORT).show();
                             }
 
                         }
 
-                return true;
+                        return true;
                     }
                 });
 
@@ -86,16 +85,15 @@ public class ShoulderExerciseDetailsFragment extends Fragment {
     }
 
     //Add data to SQLite with name of exercise and day of the week if it's not present
-    public void AddData(String newEntry, String weekDays){
+    public void AddData(String newEntry, String weekDays) {
         boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
 
-        if(insertData == true) {
+        if (insertData == true) {
             Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
 
 

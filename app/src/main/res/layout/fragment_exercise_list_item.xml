@@ -6,14 +6,14 @@
     android:background="@drawable/grad_bg"
     tools:context=".Fragments.ExerciseListItemFragment">
 
-   <TextView
-       android:id="@+id/exerciseName"
-       android:layout_centerHorizontal="true"
-       android:layout_marginTop="50dp"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:textStyle="bold"
-       android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnDelete"

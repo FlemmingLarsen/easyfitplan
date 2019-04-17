@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -66,7 +65,7 @@
             android:background="@android:color/transparent"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_toRightOf="@+id/chestButton"
+            android:layout_toEndOf="@+id/chestButton"
             android:layout_marginTop="105dp"/>
 
         <Button

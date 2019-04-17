@@ -135,10 +135,6 @@ public class TrainingFragment extends Fragment {
             }
         });
 
-
-
-
         return view;
     }
-
 }

@@ -65,6 +65,5 @@ public class UserActivity {
         this.name = activity;
     }
 
-
 }
 

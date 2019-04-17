@@ -2,10 +2,10 @@ package dk.flemminglarsen.easyfitplan.Helperclasses;
 
 public class FoodActivity extends FoodItems {
 
-     String name;
-     String carbohydrates;
-     String fats;
-     String protein;
+    String name;
+    String carbohydrates;
+    String fats;
+    String protein;
 
     public FoodActivity() {
     }

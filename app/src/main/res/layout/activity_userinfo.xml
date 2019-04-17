@@ -6,106 +6,105 @@
 
     <TextView
         android:id="@+id/toptext"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please take the time to fill out the following information. Without it, we cannot help you."/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:text="Please take the time to fill out the following information. Without it, we cannot help you." />
 
     <EditText
-        android:layout_below="@+id/toptext"
-        android:hint="Your name"
         android:id="@+id/editName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toptext"
+        android:hint="Your name" />
 
     <EditText
-        android:inputType="number"
-        android:layout_below="@+id/editName"
-        android:hint="Your age"
         android:id="@+id/editAge"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editName"
+        android:hint="Your age in years"
+        android:inputType="number" />
 
     <EditText
-        android:inputType="number"
-        android:layout_below="@+id/editAge"
-        android:hint="Your Height"
         android:id="@+id/editHeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editAge"
+        android:hint="Your Height in cm"
+        android:inputType="number" />
 
     <EditText
-        android:inputType="number"
-        android:layout_below="@+id/editHeight"
-        android:hint="Your Weight"
         android:id="@+id/editWeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editHeight"
+        android:hint="Your Weight in kg"
+        android:inputType="number" />
 
     <RadioGroup
-        android:layout_marginTop="5dp"
         android:id="@+id/radioGrp"
-        android:layout_below="@id/editWeight"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@id/editWeight"
+        android:layout_marginTop="5dp"
         android:background="@color/transparent"
+        android:orientation="horizontal"
         android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        >
+        android:paddingRight="8dp">
+
         <RadioButton
             android:id="@+id/radioM"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_weight="1"
+            android:buttonTint="@color/common_google_signin_btn_text_light_focused"
             android:checked="true"
             android:drawableStart="@drawable/male_female"
-            android:layout_weight="1"
-            android:textSize="14sp"
-            android:buttonTint="@color/common_google_signin_btn_text_light_focused"
             android:hint="Male"
-            />
+            android:textSize="14sp" />
+
         <RadioButton
             android:id="@+id/radioF"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_weight="1"
+            android:buttonTint="@color/common_google_signin_btn_text_light_focused"
             android:checked="false"
             android:drawableStart="@drawable/male_female"
-            android:layout_weight="1"
-            android:textSize="14sp"
-            android:buttonTint="@color/common_google_signin_btn_text_light_focused"
             android:hint="Female"
-            />
+            android:textSize="14sp" />
     </RadioGroup>
 
     <Button
         android:id="@+id/profileUpdate"
-        android:text="Update Profile"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:text="Update Profile" />
 
     <TextView
-        android:layout_marginTop="11dp"
-        android:layout_below="@id/radioGrp"
         android:id="@+id/activityLevel"
-        android:text="Activity:"
-        android:textSize="18dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGrp"
+        android:layout_marginTop="11dp"
+        android:text="Activity:"
+        android:textSize="18sp" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:entries="@array/activityLevel"
-        android:layout_toRightOf="@+id/activityLevel"
-        android:layout_below="@+id/radioGrp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGrp"
+        android:layout_toEndOf="@+id/activityLevel"
+        android:entries="@array/activityLevel" />
 
 </RelativeLayout>

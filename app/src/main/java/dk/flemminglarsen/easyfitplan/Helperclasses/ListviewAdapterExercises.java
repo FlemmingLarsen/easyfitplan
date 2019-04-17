@@ -14,8 +14,8 @@ import dk.flemminglarsen.easyfitplan.R;
 
 public class ListviewAdapterExercises extends ArrayAdapter<String> {
 
-    private String [] names;
-    private int [] gifs;
+    private String[] names;
+    private int[] gifs;
     private Context mContext;
 
     public ListviewAdapterExercises(@NonNull Context context, String[] exerciseNames, int[] exerciseGifs, String[] chestExerciseDescription) {
@@ -35,22 +35,22 @@ public class ListviewAdapterExercises extends ArrayAdapter<String> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder mViewHolder = new ViewHolder();
-        if(convertView == null) {
+        if (convertView == null) {
             LayoutInflater mInflator = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = mInflator.inflate(R.layout.listview_item_exercises, parent, false);
             mViewHolder.mExercise = convertView.findViewById(R.id.imageView);
             mViewHolder.mName = convertView.findViewById(R.id.textView);
             convertView.setTag(mViewHolder);
-        }else{
-            mViewHolder = (ViewHolder)convertView.getTag();
+        } else {
+            mViewHolder = (ViewHolder) convertView.getTag();
         }
-            mViewHolder.mExercise.setImageResource(gifs[position]);
-            mViewHolder.mName.setText(names[position]);
+        mViewHolder.mExercise.setImageResource(gifs[position]);
+        mViewHolder.mName.setText(names[position]);
 
         return convertView;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         ImageView mExercise;
         TextView mName;
     }

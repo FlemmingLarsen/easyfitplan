@@ -1,29 +1,22 @@
 package dk.flemminglarsen.easyfitplan.Helperclasses;
 
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.client.core.Context;
 
 import java.util.ArrayList;
 
-import dk.flemminglarsen.easyfitplan.Activities.MenuActivity;
 import dk.flemminglarsen.easyfitplan.Fragments.FoodDetailFragment;
-import dk.flemminglarsen.easyfitplan.Fragments.FoodFragment;
-import dk.flemminglarsen.easyfitplan.Fragments.TrackingFragment;
 import dk.flemminglarsen.easyfitplan.R;
-
 
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
@@ -32,22 +25,19 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     ArrayList<FoodActivity> list;
     Context context;
 
-
     public FoodAdapter(Context context, ArrayList<FoodActivity> list) {
         this.list = list;
         this.context = context;
     }
 
-    public FoodAdapter(ArrayList<FoodActivity> list){
+    public FoodAdapter(ArrayList<FoodActivity> list) {
         this.list = list;
     }
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_item_food, parent, false);
-
 
         return new ViewHolder(view);
     }
@@ -79,11 +69,10 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
                 bundle.putString("fats", fats);
                 fragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
-
             }
         });
     }
-    
+
     @Override
     public int getItemCount() {
         return list.size();
@@ -100,16 +89,5 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
             foods = itemView.findViewById(R.id.food);
         }
     }
-
-   /* public void getInfo(){
-        TrackingActivity trackingActivity = new TrackingActivity();
-        foods = trackingActivity.getName();
-        carbo = trackingActivity.getCarbohydrates();
-        protein = trackingActivity.getProtein();
-        fats = trackingActivity.getFats();
-
-
-    }*/
-
 }
 

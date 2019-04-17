@@ -13,26 +13,25 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import dk.flemminglarsen.easyfitplan.Helperclasses.UserActivity;
-import dk.flemminglarsen.easyfitplan.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import dk.flemminglarsen.easyfitplan.R;
+
 
 public class UserInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private EditText editName, editAge, editHeight, editWeight;
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
     Spinner spinner;
     Button profileUpdate;
     int selectValueId;
     String gender, activity;
-
     //Database
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    private EditText editName, editAge, editHeight, editWeight;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
 
     public UserInfoActivity() {
     }
@@ -69,9 +68,9 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
 
                 //Radiobutton genders
                 selectValueId = radioGroup.getCheckedRadioButtonId();
-                if(selectValueId == radioButton.getId()){
+                if (selectValueId == radioButton.getId()) {
                     gender = "Male";
-                }else{
+                } else {
                     gender = "Female";
                 }
 
@@ -100,8 +99,26 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
             return;
         }
 
+        if (name.length() >= 25 ) {
+            editName.setError("Name too long");
+            editName.requestFocus();
+            return;
+        }
+
         if (age.isEmpty()) {
             editAge.setError("Age is required");
+            editAge.requestFocus();
+            return;
+        }
+
+        if (age.length() > 2) {
+            editAge.setError("Please enter correct age");
+            editAge.requestFocus();
+            return;
+        }
+
+        if (age.length() < 2) {
+            editAge.setError("Please enter correct age");
             editAge.requestFocus();
             return;
         }
@@ -112,14 +129,38 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
             return;
         }
 
+        if (height.length() > 3) {
+            editHeight.setError("Please enter correct height");
+            editHeight.requestFocus();
+            return;
+        }
+
+        if (height.length() < 2) {
+            editHeight.setError("Please enter correct height");
+            editHeight.requestFocus();
+            return;
+        }
+
         if (weight.isEmpty()) {
             editWeight.setError("Weight is required");
             editWeight.requestFocus();
             return;
         }
 
+        if (weight.length() > 3) {
+            editWeight.setError("Please enter correct weight");
+            editWeight.requestFocus();
+            return;
+        }
+
+        if (weight.length() < 2) {
+            editWeight.setError("Please enter correct weight");
+            editWeight.requestFocus();
+            return;
+        }
+
         //If conditions are met create user in Firebase and go to users profile
-        else{
+        else {
             String UID = FirebaseAuth.getInstance().getUid();
             DatabaseReference current_user = databaseReference.child(UID);
             current_user.child("name").setValue(name);
@@ -130,8 +171,8 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
             current_user.child("activity").setValue(activity);
 
             Intent intent = new Intent(UserInfoActivity.this, MenuActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         }
     }
 
@@ -139,13 +180,11 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String activityLevel = parent.getItemAtPosition(position).toString().trim();
-        Toast.makeText(parent.getContext(), activityLevel, Toast.LENGTH_SHORT).show();
     }
 
     //Not used
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
- }
+}
 

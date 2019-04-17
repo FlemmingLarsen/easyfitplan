@@ -17,10 +17,9 @@ import dk.flemminglarsen.easyfitplan.R;
 public class ExerciseListItemFragment extends Fragment {
 
     private static final String TAG = "EditDataActivity";
-
+    DatabaseHelper mDatabaseHelper;
     private Button btnDelete;
     private TextView exercisename;
-    DatabaseHelper mDatabaseHelper;
     private String selectedName;
     private Integer selectedID;
 
@@ -46,11 +45,10 @@ public class ExerciseListItemFragment extends Fragment {
             public void onClick(View v) {
                 mDatabaseHelper.deleteName(selectedID, selectedName);
                 exercisename.setText("");
-                Toast.makeText(getActivity(), "Exercise deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),  selectedName + " deleted", Toast.LENGTH_SHORT).show();
             }
         });
 
         return view;
     }
-
 }

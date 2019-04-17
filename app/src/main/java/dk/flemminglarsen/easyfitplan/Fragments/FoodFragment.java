@@ -19,10 +19,10 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import dk.flemminglarsen.easyfitplan.Helperclasses.FoodDatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
@@ -38,7 +38,7 @@ public class FoodFragment extends Fragment {
     ListView listView;
     SQLiteDatabase sqLiteDatabase;
     ArrayList<HashMap<String, String>> foodlist;
-    TextView textView, calories ;
+    TextView caloriesTxt, messageTxt;
     ListAdapter adapter;
     HashMap<String, String> foods;
     ProgressBar progressBar;
@@ -52,9 +52,9 @@ public class FoodFragment extends Fragment {
         listView = view.findViewById(R.id.caloriesEaten);
         foodDatabaseHelper = new FoodDatabaseHelper(getActivity());
         sqLiteDatabase = foodDatabaseHelper.getWritableDatabase();
-        textView = view.findViewById(R.id.caloriesTotal);
+        caloriesTxt = view.findViewById(R.id.caloriesTotal);
+        messageTxt = view.findViewById(R.id.message);
         progressBar = view.findViewById(R.id.progressBar);
-
 
         foodlist = new ArrayList<>();
         populateListview();
@@ -72,33 +72,31 @@ public class FoodFragment extends Fragment {
             }
         });
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     final int position, long id) {
 
-                //Alertdialog before item is deleted
+                //Alertdialog onclick before item can be deleted
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
                 alertDialogBuilder.setTitle("Do you want to delete this item?");
                 alertDialogBuilder
                         .setMessage("You can always add it again later")
                         .setCancelable(false)
-                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 //Get foods hashmap, get value from key, and call deleteItem()
                                 foods = (HashMap<String, String>) adapter.getItem(position);
-                                if(foods != null) {
-                                    String name = foods.get("id");
-                                    int delete = valueOf(name);
+                                if (foods != null) {
+                                    String idDelete = foods.get("id");
+                                    int delete = valueOf(idDelete);
                                     deleteItem(delete);
-                                    Toast.makeText(getActivity(), "id: " + name, Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })
                         //Closes the dialog
-                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                             }
                         });
@@ -141,7 +139,7 @@ public class FoodFragment extends Fragment {
     }
 
     //Delete item from listview and populate Listview again and update progressbar
-    public void deleteItem(int position){
+    public void deleteItem(int position) {
         foodDatabaseHelper.deleteItem(position);
         populateListview();
         getValues();
@@ -149,16 +147,17 @@ public class FoodFragment extends Fragment {
     }
 
     //Get values from each column and calculate to amount of calories
-    public void getValues(){
+    public void getValues() {
         int proteinCursor = foodDatabaseHelper.getProtein();
         int fatCursor = foodDatabaseHelper.getFat();
         int carbsCursor = foodDatabaseHelper.getcarbs();
         caloriesTotal = ((proteinCursor * 4) + (carbsCursor * 4) + (fatCursor * 9));
 
-        if(caloriesTotal != 0) {
-            textView.setText(String.valueOf(caloriesTotal));
-        }else{
-            textView.setText("You haven't eaten anything today!");
+        if (caloriesTotal != 0) {
+            caloriesTxt.setText(String.valueOf(caloriesTotal));
+        } else {
+            messageTxt.setText("Add food via the button");
+            caloriesTxt.setText("");
         }
     }
 
@@ -170,7 +169,7 @@ public class FoodFragment extends Fragment {
     }
 
     //Calculate percent eaten out of total maintain and update progressbar
-    public void setProgressBar(){
+    public void setProgressBar() {
         percent = ((caloriesTotal * 100) / maintainInt);
         progressBar.setProgress(percent);
 

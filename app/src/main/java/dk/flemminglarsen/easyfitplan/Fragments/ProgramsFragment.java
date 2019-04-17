@@ -44,5 +44,4 @@ public class ProgramsFragment extends Fragment {
 
         return view;
     }
-
 }

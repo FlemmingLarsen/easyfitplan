@@ -59,7 +59,7 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Get all the data from database
-    public Cursor getData(){
+    public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
@@ -68,7 +68,7 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Delete food from database
-    public void deleteItem(int id){
+    public void deleteItem(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL0 + " = '" + id + "'";
@@ -76,15 +76,15 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-
     //Get sum of all proteins in database
-    public int getProtein(){
+    public int getProtein() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor data = db.rawQuery("SELECT SUM(" + FoodDatabaseHelper.COL2 + ") as Total FROM " + FoodDatabaseHelper.TABLE_NAME, null);
         if (data.moveToFirst()) {
             int proteinsTotal = data.getInt(data.getColumnIndex("Total"));
             return proteinsTotal;
         }
+
         return 0;
     }
 
@@ -96,8 +96,8 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
             int fatsTotal = data.getInt(data.getColumnIndex("Total"));
             return fatsTotal;
         }
-        return 0;
 
+        return 0;
     }
 
     //Get sum of all carbohydrates in database
@@ -108,7 +108,7 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
             int carbsTotal = data.getInt(data.getColumnIndex("Total"));
             return carbsTotal;
         }
-        return 0;
 
+        return 0;
     }
 }

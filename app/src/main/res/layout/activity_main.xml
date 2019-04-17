@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/grad_bg"
+    android:orientation="vertical"
     tools:context="dk.flemminglarsen.easyfitplan.Activities.MainActivity">
 
     <RelativeLayout
@@ -21,32 +20,32 @@
         android:layout_centerVertical="true"
         android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/imgLogo"
-            android:background="@drawable/logotransparent"
-            android:layout_width="150dp"
-            android:layout_height="73dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="150dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/logotransparent"
+        android:scaleType="fitCenter" />
 
-        <TextView
-            android:layout_toRightOf="@id/imgLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:textSize="40dp"
-            android:text="EasyFitPlan"
-            android:paddingTop="25dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imgLogo"
+        android:fontFamily="sans-serif-light"
+        android:paddingTop="25dp"
+        android:text="EasyFitPlan"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgLogo"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
         android:fontFamily="sans-serif-medium"
         android:text="Login"
         android:textColor="@color/white"
@@ -54,83 +53,82 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login"
         android:background="@color/transparent"
-        android:layout_below="@id/tv_login"/>
+        android:orientation="vertical" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:background="@color/transparent"
-            android:layout_below="@id/tv_login"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login"
+        android:layout_marginTop="20dp"
+        android:background="@color/transparent"
+        android:orientation="vertical" />
 
 
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/et_bg"
-                android:fontFamily="sans-serif-light"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="10dp"
-                android:paddingRight="15dp"
-                android:layout_margin="10dp"
-                android:textColor="@color/white"
-                android:hint="Email"
-                android:gravity="center"
-                android:textColorHint="@color/white"
-                android:textSize="15sp"
-                android:layout_below="@id/tv_login"/>
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_login"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/et_bg"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:hint="Email"
+        android:paddingStart="10dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
         android:layout_marginTop="30dp"
-        android:orientation="vertical"
         android:background="@color/colorPrimary"
-        android:layout_below="@id/editTextEmail"/>
+        android:orientation="vertical" />
 
-          <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/et_bg"
-            android:fontFamily="sans-serif-light"
-            android:paddingLeft="15dp"
-            android:layout_marginLeft="10dp"
-            android:paddingRight="15dp"
-            android:layout_marginRight="10dp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:gravity="center"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:layout_below="@id/editTextEmail"/>
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/editTextEmail"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/et_bg"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
 
-            <Button
-                android:id="@+id/buttonLogin"
-                android:text="Login"
-                android:background="@color/transparent"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextPassword"
-                />
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_centerInParent="true"
+        android:background="@color/transparent"
+        android:text="Login" />
 
-            <TextView
-                android:id="@+id/textViewSignup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/buttonLogin"
-                android:paddingTop="15dp"
-                android:layout_centerInParent="true"
-                android:text="Don't have and account yet? Click here"/>
+    <TextView
+        android:id="@+id/textViewSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLogin"
+        android:layout_centerInParent="true"
+        android:paddingTop="15dp"
+        android:text="Don't have and account yet? Click here" />
 
 </RelativeLayout>

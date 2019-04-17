@@ -6,47 +6,47 @@
     tools:context=".Fragments.FoodDetailFragment">
 
     <TextView
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="50dp"
-        android:hint="Foodname"
         android:id="@+id/foodName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:hint="Foodname" />
 
     <TextView
         android:id="@+id/protein"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/foodName"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
-        android:hint="protein"/>
+        android:layout_marginTop="10dp"
+        android:hint="protein" />
 
     <TextView
         android:id="@+id/carbo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/protein"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
-        android:hint="carbo"/>
+        android:layout_marginTop="10dp"
+        android:hint="carbo" />
 
     <TextView
         android:id="@+id/fats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/carbo"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
-        android:hint="fats"/>
+        android:layout_marginTop="10dp"
+        android:hint="fats" />
 
     <Button
         android:id="@+id/addFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/fats"
-        android:text="Add Food"
-        android:layout_marginTop="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add Food" />
 
 </RelativeLayout>

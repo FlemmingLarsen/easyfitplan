@@ -47,18 +47,17 @@ public class TrackingFragment extends Fragment {
         super.onStart();
 
         //If database reference is not empty, get snapshot from database and add the values to ArrayList
-        if(databaseReference != null){
+        if (databaseReference != null) {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
+                    if (dataSnapshot.exists()) {
                         list = new ArrayList<>();
-                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             list.add(ds.getValue(FoodActivity.class));
                         }
                         FoodAdapter adapter = new FoodAdapter(list);
                         recyclerView.setAdapter(adapter);
-
                     }
                 }
 
@@ -69,7 +68,7 @@ public class TrackingFragment extends Fragment {
             });
         }
         //If searchView is not empty, listen for callbacks for changes to the query text
-        if(searchView != null){
+        if (searchView != null) {
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
@@ -83,21 +82,17 @@ public class TrackingFragment extends Fragment {
                 }
             });
         }
-
     }
 
-
     //If an object in the ArrayList contains the letter(s) as in the searchView, add that item to a new arrayList
-    private void search(String str){
+    private void search(String str) {
         ArrayList<FoodActivity> searchList = new ArrayList<>();
-        for(FoodActivity object : list){
-            if(object.getName().toLowerCase().contains(str.toLowerCase())){
+        for (FoodActivity object : list) {
+            if (object.getName().toLowerCase().contains(str.toLowerCase())) {
                 searchList.add(object);
             }
         }
         FoodAdapter foodAdapter = new FoodAdapter(searchList);
         recyclerView.setAdapter(foodAdapter);
     }
-
-
 }

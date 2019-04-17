@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,8 +24,9 @@ public class WeekFragment extends Fragment {
 
     private static final String TAG = "ListDataActivity";
     DatabaseHelper mDatabaseHelper;
-    private ListView mListView;
     String day;
+    TextView listInfo;
+    private ListView mListView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class WeekFragment extends Fragment {
 
         mListView = view.findViewById(R.id.listview);
         mDatabaseHelper = new DatabaseHelper(getActivity());
+        listInfo = view.findViewById(R.id.listInfo);
 
         populateListView();
 
@@ -53,78 +56,103 @@ public class WeekFragment extends Fragment {
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for monday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
-
-        }else if (day == "tuesday") {
+        } else if (day == "tuesday") {
             Cursor cursor = mDatabaseHelper.getTuesday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for tuesday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
-        }else if (day == "wednesday") {
+        } else if (day == "wednesday") {
             Cursor cursor = mDatabaseHelper.getWednesday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for wednesday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
-        }else if (day == "thursday") {
+        } else if (day == "thursday") {
             Cursor cursor = mDatabaseHelper.getThursday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for thursday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
-        }else if (day == "friday") {
+        } else if (day == "friday") {
             Cursor cursor = mDatabaseHelper.getFriday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for friday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
-        }else if (day == "saturday") {
+        } else if (day == "saturday") {
             Cursor cursor = mDatabaseHelper.getSaturday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for saturday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
-        }else if (day == "sunday") {
+        } else if (day == "sunday") {
             Cursor cursor = mDatabaseHelper.getSunday();
             ArrayList<String> listData = new ArrayList<>();
             while (cursor.moveToNext()) {
                 listData.add(cursor.getString(2));
+            //If there are items to get, change the text accordingly
+            }if(listData.size() != 0){
+                listInfo.setText("Your selected exercises for sunday is");
             }
+
             //Create the list adapter and set the id
             final ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
         }
 
-
-        //OnClick for the ExerciseListItem
+        //OnClick for the ExerciseListItems
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 String name = parent.getItemAtPosition(position).toString();
 
                 //Get ID associated with name
@@ -146,11 +174,8 @@ public class WeekFragment extends Fragment {
                 } else {
                     Toast.makeText(getActivity(), "No ID with that name", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
-
 }
 

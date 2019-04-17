@@ -13,7 +13,7 @@ public class FoodItems {
         this.carbs = carbs;
     }
 
-    public FoodItems(){
+    public FoodItems() {
 
     }
 

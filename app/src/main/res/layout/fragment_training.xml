@@ -7,90 +7,92 @@
         android:id="@+id/buttonExercises"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:width="210dp"
         android:height="50dp"
-        android:text="Exercises"
-        android:backgroundTint="@color/transparent"/>
+        android:backgroundTint="@color/transparent"
+        android:text="Exercises" />
 
     <Button
         android:id="@+id/buttonPrograms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/buttonExercises"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/buttonExercises"
         android:width="210dp"
         android:height="50dp"
-        android:text="Programs"
-        android:backgroundTint="@color/transparent"/>
+        android:backgroundTint="@color/transparent"
+        android:text="Programs" />
 
     <Button
         android:id="@+id/btnMonday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonPrograms"
-        android:text="Monday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Monday" />
 
     <Button
         android:id="@+id/btnTuesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnMonday"
-        android:text="Tuesday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Tuesday" />
 
     <Button
         android:id="@+id/btnWednesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnTuesday"
-        android:text="Wednesday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Wednesday" />
 
     <Button
         android:id="@+id/btnThursday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnWednesday"
-        android:text="Thursday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Thursday" />
 
     <Button
         android:id="@+id/btnFriday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnThursday"
-        android:text="Friday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Friday" />
 
     <Button
         android:id="@+id/btnSaturday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnFriday"
-        android:text="Saturday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Saturday" />
 
     <Button
         android:id="@+id/btnSunday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnSaturday"
-        android:text="Sunday"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/transparent"
-        android:layout_centerHorizontal="true"/>
+        android:text="Sunday" />
 
 
 </RelativeLayout>

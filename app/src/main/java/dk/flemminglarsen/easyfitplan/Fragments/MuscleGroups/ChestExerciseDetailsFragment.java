@@ -1,7 +1,6 @@
 package dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups;
 
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.PopupMenu;
@@ -16,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import dk.flemminglarsen.easyfitplan.Fragments.TrainingFragment;
 import dk.flemminglarsen.easyfitplan.Helperclasses.DatabaseHelper;
 import dk.flemminglarsen.easyfitplan.R;
 
@@ -43,7 +41,7 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
         //Get bundle and attach values to .xml
         final Bundle bundle = getArguments();
-        if(bundle != null){
+        if (bundle != null) {
             mToolbar.setTitle(bundle.getString("chestExerciseNames"));
             mImageView.setImageResource(bundle.getInt("chestExerciseGifs"));
             textView.setText(bundle.getString("chestExerciseDescription"));
@@ -66,18 +64,16 @@ public class ChestExerciseDetailsFragment extends Fragment {
                         newEntry = bundle.getString("chestExerciseNames");
 
                         //Check if that specific exercise is already on that specific day
-                        if(newEntry != null) {
+                        if (newEntry != null) {
                             Boolean check = mDatabaseHelper.checkExists(newEntry, weekDays);
-                                if(check == true ){
-                                    AddData(newEntry, weekDays);
-                                }else{
-                                    Toast.makeText(getActivity(), newEntry + " is already on " + weekDays, Toast.LENGTH_SHORT).show();
-                                }
-
-
+                            if (check == true) {
+                                AddData(newEntry, weekDays);
+                            } else {
+                                Toast.makeText(getActivity(), newEntry + " is already on " + weekDays, Toast.LENGTH_SHORT).show();
+                            }
                         }
 
-                return true;
+                        return true;
                     }
                 });
 
@@ -87,17 +83,17 @@ public class ChestExerciseDetailsFragment extends Fragment {
 
         return view;
     }
-        //Add data to SQLite with name of exercise and day of the week if it's not present
-        public void AddData(String newEntry, String weekDays){
-            boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
 
-            if(insertData == true) {
-                Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
-            }
+    //Add data to SQLite with name of exercise and day of the week if it's not present
+    public void AddData(String newEntry, String weekDays) {
+        boolean insertData = mDatabaseHelper.addData(newEntry, weekDays);
+
+        if (insertData == true) {
+            Toast.makeText(getActivity(), newEntry + " Added to " + weekDays, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
         }
-
+    }
 }
 
 

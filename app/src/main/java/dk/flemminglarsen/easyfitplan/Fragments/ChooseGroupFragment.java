@@ -1,7 +1,6 @@
 package dk.flemminglarsen.easyfitplan.Fragments;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ChestExerciseListviewFragment;
-import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ShoulderExerciseDetailsFragment;
 import dk.flemminglarsen.easyfitplan.Fragments.MuscleGroups.ShoulderExerciseListviewFragment;
 import dk.flemminglarsen.easyfitplan.R;
 
@@ -25,8 +23,6 @@ public class ChooseGroupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_choose_group, container, false);
 
-
-        //ToDo: At least two more muscle groups
         //Top navigation buttons
         Button btnTraining = view.findViewById(R.id.buttonTraining);
         Button btnPrograms = view.findViewById(R.id.buttonPrograms);
@@ -86,6 +82,4 @@ public class ChooseGroupFragment extends Fragment {
 
         return view;
     }
-
-
 }

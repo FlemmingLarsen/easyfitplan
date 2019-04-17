@@ -17,11 +17,10 @@ public class FoodItemAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<FoodActivity> arrayList;
 
-    public FoodItemAdapter(Context context, ArrayList<FoodActivity> arrayList){
+    public FoodItemAdapter(Context context, ArrayList<FoodActivity> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
-
 
     @Override
     public int getCount() {
@@ -41,8 +40,7 @@ public class FoodItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.listview_item_food, null);
         TextView food = convertView.findViewById(R.id.food);
         TextView proteins = convertView.findViewById(R.id.proteins);
@@ -57,6 +55,5 @@ public class FoodItemAdapter extends BaseAdapter {
 
         return convertView;
     }
-
 }
 

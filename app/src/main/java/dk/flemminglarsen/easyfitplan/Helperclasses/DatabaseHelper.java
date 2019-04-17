@@ -3,7 +3,6 @@ package dk.flemminglarsen.easyfitplan.Helperclasses;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -60,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Get all the data from database
-    public Cursor getData(){
+    public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
@@ -70,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Returns only the ID that matches the name passed in
-    public Cursor getItemID(String name){
+    public Cursor getItemID(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
                 " WHERE " + COL2 + " = '" + name + "'";
@@ -79,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Delete from database
-    public void deleteName(int id, String name){
+    public void deleteName(int id, String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL1 + " = '" + id + "'" +
@@ -90,67 +89,70 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Check if exercise already exists on the chosen day
-    public boolean checkExists(String newEntry, String weekDays){
+    public boolean checkExists(String newEntry, String weekDays) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL2 +  "= '" + newEntry + "' AND " + COL0 + "= '"+ weekDays +"' "  ;
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL2 + "= '" + newEntry + "' AND " + COL0 + "= '" + weekDays + "' ";
         Cursor data = db.rawQuery(query, null);
-            if(data.getCount() > 0){
-                return false;
-            }else{
-                return true;
-            }
+        if (data.getCount() > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 
     //Get mondays from database
-    public Cursor getMonday(){
+    public Cursor getMonday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Monday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Monday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
 
     //Get tuesdays from database
-    public Cursor getTuesday(){
+    public Cursor getTuesday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Tuesday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Tuesday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
     //Get wednesday from database
-    public Cursor getWednesday(){
+    public Cursor getWednesday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Wednesday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Wednesday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
 
     //Get thursdays from database
-    public Cursor getThursday(){
+    public Cursor getThursday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Thursday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Thursday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
     //Get friday from database
-    public Cursor getFriday(){
+    public Cursor getFriday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Friday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Friday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
 
     //Get saturday from database
-    public Cursor getSaturday(){
+    public Cursor getSaturday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Saturday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Saturday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
     //Get sunday from database
-    public Cursor getSunday(){
+    public Cursor getSunday() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME+ " WHERE " + COL0 + " = '" + "Sunday" + "'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL0 + " = '" + "Sunday" + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
